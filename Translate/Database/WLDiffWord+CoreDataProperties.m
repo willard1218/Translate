@@ -7,11 +7,19 @@
 //
 
 #import "WLDiffWord+CoreDataProperties.h"
+#import "DiffMatchPatch.h"
 
 @implementation WLDiffWord (CoreDataProperties)
 
 + (NSFetchRequest<WLDiffWord *> *)fetchRequest {
 	return [[NSFetchRequest alloc] initWithEntityName:@"WLDiffWord"];
+}
+
++ (instancetype)createEntityWithDiff:(Diff *)diff {
+    WLDiffWord *diffWord = [WLDiffWord createEntity];
+    diffWord.text = diff.text;
+    diffWord.operation = diff.operation;
+    return diffWord;
 }
 
 @dynamic operation;

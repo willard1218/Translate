@@ -7,6 +7,8 @@
 //
 
 #import "WLQuiz+CoreDataProperties.h"
+#import "WLDiffWord+CoreDataClass.h"
+#import "DiffMatchPatch.h"
 
 @implementation WLQuiz (CoreDataProperties)
 
@@ -19,6 +21,20 @@
     self.answer = dict[@"chinese"];
 }
 
+- (void)submitWithUserAnswer:(NSString *)userAnswer {
+    self.userAnswer = userAnswer;
+    
+    DiffMatchPatch *dmp = [DiffMatchPatch new];
+    dmp.Diff_Timeout = 1;
+    
+    NSMutableArray <Diff *>*diffResults = [dmp diff_mainOfOldString:self.answer
+                                                       andNewString:self.userAnswer];
+    
+    for (Diff *diff in diffResults) {
+        WLDiffWord *diffWord = [WLDiffWord createEntityWithDiff:diff];
+        [self addDiffWordsObject:diffWord];
+    }
+}
 
 @dynamic answer;
 @dynamic userAnswer;

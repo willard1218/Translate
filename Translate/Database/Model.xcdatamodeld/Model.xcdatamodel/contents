@@ -15,7 +15,7 @@
         <attribute name="question" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userAnswer" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="article" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WLArticle" inverseName="quizs" inverseEntity="WLArticle" syncable="YES"/>
-        <relationship name="diffWords" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WLDiffWord" inverseName="quiz" inverseEntity="WLDiffWord" syncable="YES"/>
+        <relationship name="diffWords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WLDiffWord" inverseName="quiz" inverseEntity="WLDiffWord" syncable="YES"/>
     </entity>
     <elements>
         <element name="WLArticle" positionX="5877" positionY="2214" width="128" height="88"/>
