@@ -4,18 +4,18 @@
 
 | Sentence | datatype |
 |---|---|
-| id | pk |
 | time | datatime |
 | content | string |
 
 
 | Paragraph | datatype |
 |---|---|
-| sentences | set |
+| sentences | set(Sentence) |
+| quiz | Quiz |
 
 | Article | datatype |
 |---|---|
-| paragraphs | set |
+| paragraphs | set(Paragraph) |
 
 | DiffWord | datatype |
 |---|---|
@@ -25,15 +25,10 @@
 
 | Quiz | datatype |
 |---|---|
-| problem | string |
+| problem | Paragraph |
 | userAnswer | string |
 | correctAnswer | string |
-| diffWords | set |
-
-
-
-
-
+| diffWords | set(DiffWord) |
 
 
 
