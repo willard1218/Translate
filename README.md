@@ -2,33 +2,24 @@
 
 ## Model
 
-| Sentence | datatype |
-|---|---|
-| time | datatime |
-| content | string |
-
-
-| Paragraph | datatype |
-|---|---|
-| sentences | set(Sentence) |
-| quiz | Quiz |
 
 | Article | datatype |
 |---|---|
-| paragraphs | set(Paragraph) |
+| title | string |
+| url | string |
+| quizs | set(Quiz) |
 
 | DiffWord | datatype |
 |---|---|
 | operation | int (Equal/Insert/Delete) |
-| content | string |
+| text | string |
 
-
-| Quiz | datatype |
-|---|---|
-| problem | Paragraph |
-| userAnswer | string |
-| correctAnswer | string |
-| diffWords | set(DiffWord) |
+| Quiz | datatype | note |
+|---|---|---|
+| question | string | english sentence |
+| answer | string | chinese sentence |
+| userAnswer | string | |
+| diffWords | set(DiffWord) | |
 
 
 
