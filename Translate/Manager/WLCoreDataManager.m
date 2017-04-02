@@ -87,4 +87,7 @@
     }
 }
 
+- (nullable NSArray *)executeFetchRequest:(NSFetchRequest *)request error:(NSError **)error; {
+    return [_managedObjectContext executeFetchRequest:request error:error];
+}
 @end

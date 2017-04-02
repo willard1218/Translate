@@ -17,4 +17,5 @@
 - (__kindof NSManagedObject *)createEntityWithClass:(Class)cls;
 - (void)deleteEntity:(NSManagedObject *)entity;
 - (void)saveContext;
+- (nullable NSArray *)executeFetchRequest:(NSFetchRequest *)request error:(NSError **)error;
 @end
