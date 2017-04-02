@@ -27,8 +27,8 @@
     DiffMatchPatch *dmp = [DiffMatchPatch new];
     dmp.Diff_Timeout = 1;
     
-    NSMutableArray <Diff *>*diffResults = [dmp diff_mainOfOldString:self.answer
-                                                       andNewString:self.userAnswer];
+    NSMutableArray <Diff *>*diffResults = [dmp diff_mainOfOldString:self.userAnswer
+                                                       andNewString:self.answer];
     
     for (Diff *diff in diffResults) {
         WLDiffWord *diffWord = [WLDiffWord createEntityWithDiff:diff];
