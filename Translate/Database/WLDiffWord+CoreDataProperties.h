@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<WLDiffWord *> *)fetchRequest;
 + (instancetype)createEntityWithDiff:(Diff *)diff;
+- (NSDictionary<NSString *, id> *)attributes;
 
 @property (nonatomic) int16_t operation;
 @property (nullable, nonatomic, copy) NSString *text;

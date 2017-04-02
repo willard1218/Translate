@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "DiffMatchPatch.h"
 @interface AppDelegate ()
 
 @end
@@ -17,13 +16,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    DiffMatchPatch *dmp = [DiffMatchPatch new];
-    dmp.Diff_Timeout = 1;
-    
-    // No match.
-    NSMutableArray *c = [dmp diff_mainOfOldString:@"test" andNewString:@"tevvv234"];
-    
     NSLog(@"");
 
     return YES;

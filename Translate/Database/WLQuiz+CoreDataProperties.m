@@ -36,6 +36,31 @@
     }
 }
 
+- (NSString *)diffWordsText {
+    NSString *text = @"";
+    for (WLDiffWord *diffWord in self.diffWords) {
+        text = [text stringByAppendingString:diffWord.text];
+    }
+    
+    return text;
+}
+
+- (NSAttributedString *)attributedString {
+    NSString *diffWordsText = [self diffWordsText];
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:diffWordsText];
+    
+    NSUInteger idx = 0;
+    for (WLDiffWord *diffWord in self.diffWords) {
+        NSUInteger wordLength = diffWord.text.length;
+        [attrString addAttributes:diffWord.attributes range:NSMakeRange(idx, wordLength)];
+        idx += wordLength;
+    }
+    
+    return attrString;
+}
+
+
+
 @dynamic answer;
 @dynamic userAnswer;
 @dynamic question;

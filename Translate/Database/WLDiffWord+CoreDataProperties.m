@@ -22,6 +22,19 @@
     return diffWord;
 }
 
+- (NSDictionary<NSString *, id> *)attributes {
+    switch (self.operation) {
+        case DIFF_INSERT:
+            return @{NSBackgroundColorAttributeName:[UIColor greenColor]};
+        case DIFF_DELETE:
+            return @{NSBackgroundColorAttributeName:[UIColor redColor]};
+        case DIFF_EQUAL:
+            return @{};
+    }
+    
+    return nil;
+}
+
 @dynamic operation;
 @dynamic text;
 @dynamic quiz;
