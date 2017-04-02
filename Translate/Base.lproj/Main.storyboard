@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,17 +22,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQk-AR-FGl">
-                                <rect key="frame" x="25" y="101" width="312" height="371"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQk-AR-FGl">
+                                <rect key="frame" x="31" y="59" width="313" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="n6c-31-QMp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Roy Price這人，個位可能都沒聽過，即使他曾負責過你生命中平凡的22分鐘，在2013年4月19日這一天。他也許也曾負責帶給各位非常歡樂的22分鐘，但你們其中也許很多人並沒有。而這一切全部要回到Roy在三年前的一個決定。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OK5-aS-B8h">
+                                <rect key="frame" x="31" y="242" width="313" height="122"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="122" id="u87-26-tkD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DiffWords Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9I-ZB-emS">
+                                <rect key="frame" x="31" y="414" width="313" height="238"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAG-Jb-FjR" userLabel="Submit Button">
+                                <rect key="frame" x="273" y="204" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s8w-av-u26"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DQk-AR-FGl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="7Mf-Jf-UWL"/>
+                            <constraint firstItem="OK5-aS-B8h" firstAttribute="top" secondItem="WAG-Jb-FjR" secondAttribute="bottom" constant="8" id="L1F-Wd-Vdf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WAG-Jb-FjR" secondAttribute="trailing" constant="37" id="PXC-YS-maL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Q9I-ZB-emS" secondAttribute="bottom" constant="15" id="PZR-q2-c8c"/>
+                            <constraint firstItem="WAG-Jb-FjR" firstAttribute="top" secondItem="DQk-AR-FGl" secondAttribute="bottom" constant="-6" id="VCp-Wc-kWh"/>
+                            <constraint firstItem="DQk-AR-FGl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="39" id="a4a-O5-q44"/>
+                            <constraint firstItem="Q9I-ZB-emS" firstAttribute="top" secondItem="OK5-aS-B8h" secondAttribute="bottom" constant="50" id="bIU-jO-nmz"/>
+                            <constraint firstItem="Q9I-ZB-emS" firstAttribute="width" secondItem="OK5-aS-B8h" secondAttribute="width" id="d9Y-r3-QGG"/>
+                            <constraint firstItem="Q9I-ZB-emS" firstAttribute="leading" secondItem="OK5-aS-B8h" secondAttribute="leading" id="n64-1c-IOq"/>
+                            <constraint firstItem="OK5-aS-B8h" firstAttribute="width" secondItem="DQk-AR-FGl" secondAttribute="width" id="rLo-wb-76a"/>
+                            <constraint firstItem="OK5-aS-B8h" firstAttribute="top" secondItem="DQk-AR-FGl" secondAttribute="bottom" constant="32" id="uHl-GD-KUd"/>
+                            <constraint firstItem="OK5-aS-B8h" firstAttribute="leading" secondItem="DQk-AR-FGl" secondAttribute="leading" id="uJK-fc-0yd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DQk-AR-FGl" secondAttribute="trailing" constant="15" id="wBi-2e-Ot0"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="answerTextView" destination="OK5-aS-B8h" id="5il-FY-yFd"/>
+                        <outlet property="diffWordsLabel" destination="Q9I-ZB-emS" id="t0E-vS-zh8"/>
                         <outlet property="questionLabel" destination="DQk-AR-FGl" id="PxE-bG-uIM"/>
                     </connections>
                 </viewController>

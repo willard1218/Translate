@@ -11,13 +11,13 @@
 #import "WLQuiz+CoreDataClass.h"
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
-
+@property (weak, nonatomic) IBOutlet UILabel *diffWordsLabel;
+@property (weak, nonatomic) IBOutlet UITextView *answerTextView;
+@property (strong, nonatomic) WLQuiz *quiz;
 @end
 
 @implementation ViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)initFakeData {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"2403" ofType:@"txt"];
     NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
     NSError *error;
@@ -25,13 +25,19 @@
     [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
     
     WLArticle *article = [WLArticle createEntityWithDict:articleDict];
-    WLQuiz *quiz = article.quizs[0];
-    
-    [quiz submitWithUserAnswer:@"Roy Price這，個位可能沒有聽過，即使他曾經負責過你生命中平凡無奇的22分鐘，在2013年4月19日這一天。他也許也曾負責帶給各位非常歡樂的22分鐘，但你們其中也許很多人並沒有。而這一切全部要回到Roy在三"];
-    
-    
-    _questionLabel.attributedText = quiz.attributedString;
+    _quiz = article.quizs[0];
+}
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self initFakeData];
+    _questionLabel.text = _quiz.question;
+}
+
+- (IBAction)submit:(UIButton *)sender {
+    [_answerTextView resignFirstResponder];
+    [_quiz submitWithUserAnswer:_answerTextView.text];
+    _diffWordsLabel.attributedText = _quiz.attributedString;
 }
 
 
