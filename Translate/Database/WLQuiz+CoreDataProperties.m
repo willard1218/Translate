@@ -22,12 +22,13 @@
 }
 
 - (void)submitWithUserAnswer:(NSString *)userAnswer {
+    [self deleteDiffWords];
     self.userAnswer = userAnswer;
     
     DiffMatchPatch *dmp = [DiffMatchPatch new];
     dmp.Diff_Timeout = 1;
     
-    NSMutableArray <Diff *>*diffResults = [dmp diff_mainOfOldString:self.userAnswer
+    NSMutableArray<Diff *> *diffResults = [dmp diff_mainOfOldString:self.userAnswer
                                                        andNewString:self.answer];
     
     for (Diff *diff in diffResults) {
@@ -36,13 +37,17 @@
     }
 }
 
-- (NSString *)diffWordsText {
-    NSString *text = @"";
+- (void)deleteDiffWords {
     for (WLDiffWord *diffWord in self.diffWords) {
-        text = [text stringByAppendingString:diffWord.text];
+        [diffWord deleteEntity];
     }
     
-    return text;
+    self.diffWords = nil;
+}
+
+- (NSString *)diffWordsText {
+    NSArray<NSString *> *words = [self.diffWords.array valueForKey:@"text"];
+    return [words componentsJoinedByString:@""];
 }
 
 - (NSAttributedString *)attributedString {
