@@ -28,8 +28,8 @@
             return @{NSBackgroundColorAttributeName:[UIColor greenColor]};
         case DIFF_DELETE:
             return @{NSStrikethroughStyleAttributeName:@(NSUnderlineStyleThick),
-                     NSStrikethroughColorAttributeName:[UIColor redColor],
-                     NSBackgroundColorAttributeName:[UIColor blueColor]};
+                     NSStrikethroughColorAttributeName:[UIColor blackColor],
+                     NSBackgroundColorAttributeName:[UIColor redColor]};
         case DIFF_EQUAL:
             return @{};
     }
