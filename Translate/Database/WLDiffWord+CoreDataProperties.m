@@ -27,7 +27,9 @@
         case DIFF_INSERT:
             return @{NSBackgroundColorAttributeName:[UIColor greenColor]};
         case DIFF_DELETE:
-            return @{NSBackgroundColorAttributeName:[UIColor redColor]};
+            return @{NSStrikethroughStyleAttributeName:@(NSUnderlineStyleThick),
+                     NSStrikethroughColorAttributeName:[UIColor redColor],
+                     NSBackgroundColorAttributeName:[UIColor blueColor]};
         case DIFF_EQUAL:
             return @{};
     }
