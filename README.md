@@ -15,7 +15,7 @@
 ## 資料來源
 來自 Ted 的 talk，裡面有很多翻譯好的文章，並使用 [Ted-subtitle-merge](https://github.com/willard1218/Ted-subtitle-merge) parse Ted 文章，接著合併中英文字幕。
 
-## Third Library
+## Third-party Library
 1. Diff 是使用 [google-diff-match-patch](
 https://code.google.com/p/google-diff-match-patch/)，有人 [proting](https://github.com/JanX2/google-diff-match-patch-Objective-C) 到 iOS Objective-C 上。
 
@@ -24,21 +24,24 @@ https://code.google.com/p/google-diff-match-patch/)，有人 [proting](https://g
 
 | Article | datatype |
 |---|---|
+| identifier | int |
 | title | string |
 | url | string |
-| quizs | set(Quiz) |
+| quizs | array(Quiz) |
 
-| DiffWord | datatype |
-|---|---|
-| operation | int (Equal/Insert/Delete) |
-| text | string |
 
 | Quiz | datatype | note |
 |---|---|---|
 | question | string | english sentence |
 | answer | string | chinese sentence |
 | userAnswer | string | |
-| diffWords | set(DiffWord) | |
+| diffWords | array(DiffWord) | |
+
+
+| DiffWord | datatype |
+|---|---|
+| operation | int (Equal/Insert/Delete) |
+| text | string |
 
 
 
