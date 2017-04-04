@@ -17,12 +17,13 @@
 }
 
 - (void)setupWithDictionary:(NSDictionary *)dict {
-    self.question = dict[@"english"];
-    self.answer = dict[@"chinese"];
+    self.question = dict[@"en"];
+    self.answer = dict[@"zh-tw"];
 }
 
 - (void)submitWithUserAnswer:(NSString *)userAnswer {
     [self deleteDiffWords];
+    [self filterDiffWords];
     self.userAnswer = userAnswer;
     
     DiffMatchPatch *dmp = [DiffMatchPatch new];
@@ -43,6 +44,15 @@
     }
     
     self.diffWords = nil;
+}
+
+- (void)filterDiffWords {
+    [NSCharacterSet whitespaceCharacterSet];
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id diffWord, NSDictionary<NSString *,id> * _Nullable bindings) {
+        return true;
+    }];
+    
+    [self.diffWords.array filteredArrayUsingPredicate:predicate];
 }
 
 - (NSString *)diffWordsText {

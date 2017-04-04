@@ -10,7 +10,7 @@
 #import "WLArticle+CoreDataClass.h"
 #import "WLQuiz+CoreDataClass.h"
 @interface TranslateTests : XCTestCase
-
+@property (strong, nonatomic) WLArticle *article;
 @end
 
 @implementation TranslateTests
@@ -26,25 +26,27 @@
 }
 
 - (void)testCreateArticleWithDict {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"2403" ofType:@"txt"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"json"];
     NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
     NSError *error;
     NSDictionary *articleDict =
     [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
     
-    WLArticle *article = [WLArticle createEntityWithDict:articleDict];
-    XCTAssertTrue([article.title isEqualToString:@"test"]);
-    XCTAssertTrue([article.url isEqualToString:@"http:xxx"]);
+    _article = [WLArticle createEntityWithDict:articleDict];
+    XCTAssertTrue([_article.title isEqualToString:@"Al Gore On Averting Climate Crisis"]);
+    XCTAssertTrue([_article.url isEqualToString:@"http://www.ted.com/talks/al_gore_on_averting_climate_crisis"]);
     
-    NSArray *quizs = article.quizs.array;
-    XCTAssertEqual(quizs.count, 34);
+    [_article setupQuizsWithDictionary:articleDict];
+    NSArray *quizs = _article.quizs.array;
+    XCTAssertEqual(quizs.count, 62);
     
     
     WLQuiz *quiz1 = quizs[0];
-    XCTAssertEqualObjects(quiz1.answer, @"Roy Price這個人，各位可能都未曾聽過，即使他曾負責過你生命中平凡無奇的22分鐘，在2013年4月19日這一天。他也許也曾負責帶給各位非常歡樂的22分鐘，但你們其中也許很多人並沒有。而這一切全部要回到Roy在三年前的一個決定。");
+    XCTAssertEqualObjects(quiz1.answer, @"非常謝謝你，克里斯。能有這個機會第二度踏上這個演講台真是一大榮幸。我非常感激。這個研討會給我留下了極為深刻的印象，我想感謝大家對我之前演講的好評。");
     
-    XCTAssertEqualObjects(quiz1.question, @"Roy Price is a man that most of you have probably never heard about, even though he may have been responsible for 22 somewhat mediocre  minutes of your life on April 19, 2013. He may have also been responsible for 22 very entertaining minutes, but not very many of you. And all of that goes back to a decision that Roy had to make about three years ago.");
+    XCTAssertEqualObjects(quiz1.question, @"Thank you so much, Chris. And it's truly a great honorto have the opportunity to come to this stage twice;I'm extremely grateful. I have been blown away by this conference, and I want to thank all of youfor the many nice comments about what I had to say the other night.");
 }
+
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.

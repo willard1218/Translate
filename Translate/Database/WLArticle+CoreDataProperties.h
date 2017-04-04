@@ -2,7 +2,7 @@
 //  WLArticle+CoreDataProperties.h
 //  Translate
 //
-//  Created by willard on 2017/4/1.
+//  Created by willard on 2017/4/4.
 //  Copyright © 2017年 willard. All rights reserved.
 //
 
@@ -17,8 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, copy) NSString *title;
 @property (nullable, nonatomic, copy) NSString *url;
+@property (nonatomic) int16_t identifier;
 @property (nullable, nonatomic, retain) NSOrderedSet<WLQuiz *> *quizs;
 
+- (void)setupQuizsWithDictionary:(NSDictionary *)dict;
 @end
 
 @interface WLArticle (CoreDataGeneratedAccessors)

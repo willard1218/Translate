@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="WLArticle" representedClassName="WLArticle" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="quizs" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="WLQuiz" inverseName="article" inverseEntity="WLQuiz" syncable="YES"/>
@@ -18,7 +19,7 @@
         <relationship name="diffWords" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="WLDiffWord" inverseName="quiz" inverseEntity="WLDiffWord" syncable="YES"/>
     </entity>
     <elements>
-        <element name="WLArticle" positionX="5877" positionY="2214" width="128" height="88"/>
+        <element name="WLArticle" positionX="5877" positionY="2214" width="128" height="105"/>
         <element name="WLDiffWord" positionX="5868" positionY="2034" width="128" height="90"/>
         <element name="WLQuiz" positionX="5542" positionY="2034" width="128" height="118"/>
     </elements>

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class WLQuiz;
 
-@interface ViewController : UIViewController
-
+@interface QuizViewController : UIViewController <UITextViewDelegate>
+@property (weak, nonatomic) WLQuiz *quiz;
 
 @end
 

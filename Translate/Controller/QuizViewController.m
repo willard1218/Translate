@@ -6,33 +6,31 @@
 //  Copyright © 2017年 willard. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "QuizViewController.h"
 #import "WLArticle+CoreDataClass.h"
 #import "WLQuiz+CoreDataClass.h"
-@interface ViewController ()
+@interface QuizViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *diffWordsLabel;
 @property (weak, nonatomic) IBOutlet UITextView *answerTextView;
-@property (strong, nonatomic) WLQuiz *quiz;
 @end
 
-@implementation ViewController
-- (void)initFakeData {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"2403" ofType:@"txt"];
-    NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
-    NSError *error;
-    NSDictionary *articleDict =
-    [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
-    
-    WLArticle *article = [WLArticle createEntityWithDict:articleDict];
-    _quiz = article.quizs[0];
-}
+@implementation QuizViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initFakeData];
+    self.title = @"Quiz";
     _questionLabel.text = _quiz.question;
+    _answerTextView.delegate = self;
 }
+
+-(BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    _answerTextView.text = nil;
+    return YES;
+}
+
 
 - (IBAction)submit:(UIButton *)sender {
     [_answerTextView resignFirstResponder];
