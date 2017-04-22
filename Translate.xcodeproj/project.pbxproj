@@ -10,9 +10,9 @@
 		5C629A761EAAEBB800DABB06 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A711EAAEBB800DABB06 /* NoteView.m */; };
 		5C629A771EAAEBB800DABB06 /* ScrollableLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A731EAAEBB800DABB06 /* ScrollableLabelView.m */; };
 		5C629A781EAAEBB800DABB06 /* SelectableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A751EAAEBB800DABB06 /* SelectableTableView.m */; };
-		5C629A7B1EAAEBED00DABB06 /* UITableViewCell+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A7A1EAAEBED00DABB06 /* UITableViewCell+Helpers.m */; };
 		5C629A7E1EAAEF6800DABB06 /* CompletedQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A7D1EAAEF6800DABB06 /* CompletedQuizViewController.m */; };
 		5C629A811EAAF22D00DABB06 /* UILabel+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A801EAAF22D00DABB06 /* UILabel+Utility.m */; };
+		5C629A841EAB0D1500DABB06 /* UITableView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A831EAB0D1500DABB06 /* UITableView+Helper.m */; };
 		5C6505C11E9B6B1F0052E904 /* ArticleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6505C01E9B6B1F0052E904 /* ArticleListViewController.m */; };
 		5C6505C41E9B6B2F0052E904 /* QuizListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6505C31E9B6B2F0052E904 /* QuizListViewController.m */; };
 		5C7D852B1E7D54D40013F82A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D852A1E7D54D40013F82A /* main.m */; };
@@ -61,12 +61,12 @@
 		5C629A731EAAEBB800DABB06 /* ScrollableLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollableLabelView.m; sourceTree = "<group>"; };
 		5C629A741EAAEBB800DABB06 /* SelectableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectableTableView.h; sourceTree = "<group>"; };
 		5C629A751EAAEBB800DABB06 /* SelectableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectableTableView.m; sourceTree = "<group>"; };
-		5C629A791EAAEBED00DABB06 /* UITableViewCell+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Helpers.h"; sourceTree = "<group>"; };
-		5C629A7A1EAAEBED00DABB06 /* UITableViewCell+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Helpers.m"; sourceTree = "<group>"; };
 		5C629A7C1EAAEF6800DABB06 /* CompletedQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedQuizViewController.h; sourceTree = "<group>"; };
 		5C629A7D1EAAEF6800DABB06 /* CompletedQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedQuizViewController.m; sourceTree = "<group>"; };
 		5C629A7F1EAAF22D00DABB06 /* UILabel+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Utility.h"; sourceTree = "<group>"; };
 		5C629A801EAAF22D00DABB06 /* UILabel+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Utility.m"; sourceTree = "<group>"; };
+		5C629A821EAB0D1500DABB06 /* UITableView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Helper.h"; sourceTree = "<group>"; };
+		5C629A831EAB0D1500DABB06 /* UITableView+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Helper.m"; sourceTree = "<group>"; };
 		5C6505BF1E9B6B1F0052E904 /* ArticleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListViewController.h; sourceTree = "<group>"; };
 		5C6505C01E9B6B1F0052E904 /* ArticleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListViewController.m; sourceTree = "<group>"; };
 		5C6505C21E9B6B2F0052E904 /* QuizListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizListViewController.h; sourceTree = "<group>"; };
@@ -250,12 +250,12 @@
 		5CF542931E8FE3EB0027B911 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5C629A821EAB0D1500DABB06 /* UITableView+Helper.h */,
+				5C629A831EAB0D1500DABB06 /* UITableView+Helper.m */,
 				5CE5D8F11E9673B7002A981D /* NSString+Helplers.h */,
 				5CE5D8F21E9673B7002A981D /* NSString+Helplers.m */,
 				5CF542941E8FE4AE0027B911 /* NSManagedObject+operation.h */,
 				5CF542951E8FE4AE0027B911 /* NSManagedObject+operation.m */,
-				5C629A791EAAEBED00DABB06 /* UITableViewCell+Helpers.h */,
-				5C629A7A1EAAEBED00DABB06 /* UITableViewCell+Helpers.m */,
 				5C629A7F1EAAF22D00DABB06 /* UILabel+Utility.h */,
 				5C629A801EAAF22D00DABB06 /* UILabel+Utility.m */,
 			);
@@ -450,6 +450,7 @@
 				5CF542791E8FD4910027B911 /* WLDiffWord+CoreDataClass.m in Sources */,
 				5C629A7E1EAAEF6800DABB06 /* CompletedQuizViewController.m in Sources */,
 				5C629A811EAAF22D00DABB06 /* UILabel+Utility.m in Sources */,
+				5C629A841EAB0D1500DABB06 /* UITableView+Helper.m in Sources */,
 				5CE5D8CA1E9381E0002A981D /* ArticleTableViewCell.m in Sources */,
 				5CF542B81E8FF0690027B911 /* QuizViewController.m in Sources */,
 				5C6505C11E9B6B1F0052E904 /* ArticleListViewController.m in Sources */,
@@ -458,7 +459,6 @@
 				5CF542B31E8FF0380027B911 /* NSString+UnicharUtilities.m in Sources */,
 				5CF5429E1E8FE8480027B911 /* WLCoreDataManager.m in Sources */,
 				5CF541FD1E8F4E1B0027B911 /* Model.xcdatamodeld in Sources */,
-				5C629A7B1EAAEBED00DABB06 /* UITableViewCell+Helpers.m in Sources */,
 				5CF5427A1E8FD4910027B911 /* WLDiffWord+CoreDataProperties.m in Sources */,
 				5CF542B01E8FF0380027B911 /* DiffMatchPatchCFUtilities.c in Sources */,
 				5CF542961E8FE4AE0027B911 /* NSManagedObject+operation.m in Sources */,

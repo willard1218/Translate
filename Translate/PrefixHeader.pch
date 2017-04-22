@@ -17,8 +17,8 @@
 #import <UIKit/UIKit.h>
 #import "NSManagedObject+operation.h"
 #import "NSString+Helplers.h"
-#import "UITableViewCell+Helpers.h"
 #import "UILabel+Utility.h"
+#import "UITableView+Helper.h"
 #endif
 
 // Include any system framework and library headers here that should be included in all compilation units.

@@ -83,7 +83,7 @@
     _tableView = _selectableTableView.tableView;
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    [_tableView registerClass:ArticleTableViewCell.class forCellReuseIdentifier:[ArticleTableViewCell identifier]];
+    [_tableView registerClass:ArticleTableViewCell.class];
 }
 
 
@@ -104,7 +104,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ArticleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[ArticleTableViewCell identifier] forIndexPath:indexPath];
+    ArticleTableViewCell *cell = [tableView dequeueReusableCellWithClass:ArticleTableViewCell.class forIndexPath:indexPath];
     
     cell.textLabel.text = _articles[indexPath.row].title;
     
@@ -118,9 +118,8 @@
     QuizListViewController *viewController = [[QuizListViewController alloc] init];
     viewController.article = _articles[indexPath.row];
     viewController.view.backgroundColor = [UIColor whiteColor];
-    UINavigationController *navigationController = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-    
-    [navigationController pushViewController:viewController animated:YES];
+ 
+    [self.navigationController pushViewController:viewController animated:YES];
 
 }
 

@@ -73,7 +73,7 @@
     _tableView = _selectableTableView.tableView;
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    [_tableView registerClass:QuizTableViewCell.class forCellReuseIdentifier:[QuizTableViewCell identifier]];
+    [_tableView registerClass:QuizTableViewCell.class];
 }
 
 - (void)viewDidLoad {
@@ -96,7 +96,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    QuizTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[QuizTableViewCell identifier] forIndexPath:indexPath];
+    QuizTableViewCell *cell = [tableView dequeueReusableCellWithClass:QuizTableViewCell.class forIndexPath:indexPath];
     
     WLQuiz *quiz = _article.quizs[indexPath.row];
     cell.textLabel.text = quiz.question;
@@ -111,10 +111,8 @@
     CompletedQuizViewController *viewController = [[CompletedQuizViewController alloc] init];
     viewController.view.backgroundColor = [UIColor whiteColor];
     viewController.quiz = _article.quizs[indexPath.row];
-    
-    UINavigationController *navigationController = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-    
-    [navigationController pushViewController:viewController animated:YES];
+
+    [self.navigationController pushViewController:viewController animated:YES];
 
 }
 
