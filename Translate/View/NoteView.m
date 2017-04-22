@@ -7,6 +7,7 @@
 //
 
 #import "NoteView.h"
+#import "WLTextView.h"
 
 @implementation NoteView
 
@@ -46,8 +47,7 @@
 
 - (void)addStackViewConstraints {
     [_stackView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_scrollView.mas_centerX);
-        make.top.and.bottom.equalTo(_scrollView);
+        make.top.and.bottom.and.centerX.equalTo(_scrollView);
     }];
 }
 
@@ -77,10 +77,9 @@
     _stackView.spacing = 10;
     
     for (int i = 0; i < 10; i++) {
-        UITextView *t1 = [[UITextView alloc] init];
+        WLTextView *t1 = [[WLTextView alloc] init];
         [_stackView addArrangedSubview:t1];
-        t1.translatesAutoresizingMaskIntoConstraints = NO;
-        t1.backgroundColor = [UIColor whiteColor];
+        
         [t1 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(@50);
             make.width.equalTo(@(self.frame.size.width-50));

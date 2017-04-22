@@ -10,6 +10,7 @@
 #import "ScrollableLabelView.h"
 #import "WLQuiz+CoreDataClass.h"
 #import "CompletedQuizViewController.h"
+#import "WLTextView.h"
 @interface NotCompletedQuizViewController ()
 
 @end
@@ -18,8 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _answerTextView = [[UITextView alloc] init];
-    _answerTextView.backgroundColor = [UIColor redColor];
+    _answerTextView = [[WLTextView alloc] init];
+    
+    
     [self.view addSubview:_answerTextView];
     [self addAnswerTextViewConstraint];
     

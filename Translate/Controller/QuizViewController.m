@@ -33,7 +33,7 @@
 - (void)addQuestionScrollableLabelConstraint {
     [_questionScrollableLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.and.left.equalTo(self.view).offset(10);
-        make.right.equalTo(self.view.mas_right).with.offset(-10);
+        make.right.equalTo(self.view.mas_right).offset(-10);
         make.height.equalTo(@100);
     }];
 }
