@@ -9,6 +9,7 @@
 #import "CompletedQuizViewController.h"
 #import "ScrollableLabelView.h"
 #import "NoteView.h"
+#import "WLQuiz+CoreDataClass.h"
 
 @interface CompletedQuizViewController ()
 @end
@@ -50,7 +51,7 @@
 
     
     
-    _diffWordsScrollableLabelView.text = @"非常謝謝你，克里斯。能有這個機會第二度踏上這個演講台真是一大榮幸。我非常感激。這個研討會給我留下了極為深刻的印象，我想感謝大家對我之前演講的好評。非常謝謝你，克里斯。能有這個機會第二度踏上這個演講台真是一大榮幸。我非常感激。這個研討會給我留下了極為深刻的印象，我想感謝大家對我之前演講的好評。非常謝謝你，克里斯。能有這個機會第二度踏上這個演講台真是一大榮幸。我非常感激。這個研討會給我留下了極為深刻的印象，我想感謝大家對我之前演講的講台真是一大榮幸。我非常感激。這個研討會給我留下了極為深刻的印象，我想感謝大家對我之前 ";
+    
     
     [self addDiffWordScrollableLabelConstraint];
     [self addNoteViewConstraint];
@@ -84,6 +85,11 @@
 - (void)addNote {
     
     
+}
+
+- (void)setQuiz:(WLQuiz *)quiz {
+    [super setQuiz:quiz];
+    _diffWordsScrollableLabelView.text = self.quiz.attributedString;
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {

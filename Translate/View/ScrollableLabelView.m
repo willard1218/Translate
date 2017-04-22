@@ -19,12 +19,15 @@
     return self;
 }
 
--(void)setText:(NSString *)text {
-    _label.text = text;
+- (void)setText:(NSString *)text {
+    
+    if ([text isKindOfClass:NSString.class]) {
+        _label.text = text;
+    } else
+        _label.attributedText = (NSAttributedString *)text;
 }
 
 - (void)setupView {
-    self.translatesAutoresizingMaskIntoConstraints = NO;
     
     _label = [[UILabel alloc] init];
     _label.numberOfLines = 0;

@@ -8,6 +8,8 @@
 
 #import "NotCompletedQuizViewController.h"
 #import "ScrollableLabelView.h"
+#import "WLQuiz+CoreDataClass.h"
+#import "CompletedQuizViewController.h"
 @interface NotCompletedQuizViewController ()
 
 @end
@@ -20,6 +22,18 @@
     _answerTextView.backgroundColor = [UIColor redColor];
     [self.view addSubview:_answerTextView];
     [self addAnswerTextViewConstraint];
+    
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Comfirm" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
+    self.navigationItem.rightBarButtonItem = barButtonItem;
+}
+
+- (void)save {
+    [self.quiz submitWithUserAnswer:_answerTextView.text];
+    CompletedQuizViewController *viewController = [[CompletedQuizViewController alloc] init];
+    viewController.view.backgroundColor = [UIColor whiteColor];
+    viewController.quiz = self.quiz;
+    
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)addAnswerTextViewConstraint {

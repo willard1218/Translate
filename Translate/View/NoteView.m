@@ -53,9 +53,6 @@
 
 - (void)setupView {
     
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    
     _titleLabel = [[UILabel alloc] init];
     _stackView = [[UIStackView alloc] init];
     _scrollView = [[UIScrollView alloc] init];

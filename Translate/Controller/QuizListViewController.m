@@ -109,7 +109,7 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-   CompletedQuizViewController *viewController = [[CompletedQuizViewController alloc] init];
+   NotCompletedQuizViewController *viewController = [[NotCompletedQuizViewController alloc] init];
     viewController.view.backgroundColor = [UIColor whiteColor];
     viewController.quiz = _article.quizs[indexPath.row];
 
