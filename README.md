@@ -38,11 +38,41 @@ https://code.google.com/p/google-diff-match-patch/)，有人 [proting](https://g
 | diffWords | array(DiffWord) | |
 
 
+
 | DiffWord | datatype |
 |---|---|
 | operation | int (Equal/Insert/Delete) |
 | text | string |
 
+| Note | datatype |
+|---|---|
+| text | string |
+
+
+
+## 設計
+### Article List
+
+顯示文章列表，分成已作答和未作答
+
+#### 已作答完畢的文章
+1. 顯示 note 數量
+
+#### 未作答完畢的文章
+1. x/y  x:目前做的題數 y:總題數
+
+### Quiz List
+#### 已作答完畢的題目
+1. 顯示 note 數量
+
+#### 未作答完畢的題目
+1. 顯示 word 數量
+
+
+### view
+1. 要可以看歷史紀錄 複習
+2. 自己打分數 看有幾句翻不好
+3. 
 
 
 

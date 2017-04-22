@@ -23,7 +23,6 @@
 
 - (void)submitWithUserAnswer:(NSString *)userAnswer {
     [self deleteDiffWords];
-    [self filterDiffWords];
     self.userAnswer = userAnswer;
     
     DiffMatchPatch *dmp = [DiffMatchPatch new];
@@ -36,6 +35,8 @@
         WLDiffWord *diffWord = [WLDiffWord createEntityWithDiff:diff];
         [self addDiffWordsObject:diffWord];
     }
+    
+    [self filterDiffWords];
 }
 
 - (void)deleteDiffWords {
@@ -48,7 +49,14 @@
 
 - (void)filterDiffWords {
     [NSCharacterSet whitespaceCharacterSet];
-    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id diffWord, NSDictionary<NSString *,id> * _Nullable bindings) {
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(WLDiffWord *diffWord, NSDictionary<NSString *,id> * _Nullable bindings) {
+        if (diffWord.text.length == 0) {
+            return false;
+        }
+        
+        if ([diffWord.text isEqualToString:@"\n"]) {
+            return false;
+        }
         return true;
     }];
     

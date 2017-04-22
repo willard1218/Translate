@@ -7,17 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C629A761EAAEBB800DABB06 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A711EAAEBB800DABB06 /* NoteView.m */; };
+		5C629A771EAAEBB800DABB06 /* ScrollableLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A731EAAEBB800DABB06 /* ScrollableLabelView.m */; };
+		5C629A781EAAEBB800DABB06 /* SelectableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A751EAAEBB800DABB06 /* SelectableTableView.m */; };
+		5C629A7B1EAAEBED00DABB06 /* UITableViewCell+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A7A1EAAEBED00DABB06 /* UITableViewCell+Helpers.m */; };
+		5C629A7E1EAAEF6800DABB06 /* CompletedQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A7D1EAAEF6800DABB06 /* CompletedQuizViewController.m */; };
+		5C629A811EAAF22D00DABB06 /* UILabel+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A801EAAF22D00DABB06 /* UILabel+Utility.m */; };
+		5C6505C11E9B6B1F0052E904 /* ArticleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6505C01E9B6B1F0052E904 /* ArticleListViewController.m */; };
+		5C6505C41E9B6B2F0052E904 /* QuizListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6505C31E9B6B2F0052E904 /* QuizListViewController.m */; };
 		5C7D852B1E7D54D40013F82A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D852A1E7D54D40013F82A /* main.m */; };
 		5C7D852E1E7D54D40013F82A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D852D1E7D54D40013F82A /* AppDelegate.m */; };
-		5C7D85341E7D54D40013F82A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7D85321E7D54D40013F82A /* Main.storyboard */; };
 		5C7D85361E7D54D40013F82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C7D85351E7D54D40013F82A /* Assets.xcassets */; };
 		5C7D85391E7D54D40013F82A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7D85371E7D54D40013F82A /* LaunchScreen.storyboard */; };
 		5CA3AA531E7D5BAA0049ACF8 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA3AA521E7D5BAA0049ACF8 /* libxml2.tbd */; };
 		5CE5D8AF1E928257002A981D /* 1.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CE5D8AE1E928257002A981D /* 1.json */; };
-		5CE5D8B61E93283D002A981D /* QuizListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE5D8B51E93283D002A981D /* QuizListTableViewController.m */; };
-		5CE5D8B91E932853002A981D /* ArticleListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE5D8B81E932853002A981D /* ArticleListTableViewController.m */; };
 		5CE5D8C71E9381D3002A981D /* QuizTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE5D8C61E9381D3002A981D /* QuizTableViewCell.m */; };
 		5CE5D8CA1E9381E0002A981D /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE5D8C91E9381DF002A981D /* ArticleTableViewCell.m */; };
+		5CE5D8F01E9665C1002A981D /* globishWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5CE5D8EF1E9665C1002A981D /* globishWords.txt */; };
+		5CE5D8F31E9673B7002A981D /* NSString+Helplers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE5D8F21E9673B7002A981D /* NSString+Helplers.m */; };
 		5CF541FD1E8F4E1B0027B911 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CF541FB1E8F4E1B0027B911 /* Model.xcdatamodeld */; };
 		5CF542771E8FD4910027B911 /* WLQuiz+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF5426C1E8FD4910027B911 /* WLQuiz+CoreDataClass.m */; };
 		5CF542781E8FD4910027B911 /* WLQuiz+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF5426E1E8FD4910027B911 /* WLQuiz+CoreDataProperties.m */; };
@@ -48,24 +55,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C629A701EAAEBB800DABB06 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
+		5C629A711EAAEBB800DABB06 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
+		5C629A721EAAEBB800DABB06 /* ScrollableLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollableLabelView.h; sourceTree = "<group>"; };
+		5C629A731EAAEBB800DABB06 /* ScrollableLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollableLabelView.m; sourceTree = "<group>"; };
+		5C629A741EAAEBB800DABB06 /* SelectableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectableTableView.h; sourceTree = "<group>"; };
+		5C629A751EAAEBB800DABB06 /* SelectableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectableTableView.m; sourceTree = "<group>"; };
+		5C629A791EAAEBED00DABB06 /* UITableViewCell+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Helpers.h"; sourceTree = "<group>"; };
+		5C629A7A1EAAEBED00DABB06 /* UITableViewCell+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Helpers.m"; sourceTree = "<group>"; };
+		5C629A7C1EAAEF6800DABB06 /* CompletedQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedQuizViewController.h; sourceTree = "<group>"; };
+		5C629A7D1EAAEF6800DABB06 /* CompletedQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedQuizViewController.m; sourceTree = "<group>"; };
+		5C629A7F1EAAF22D00DABB06 /* UILabel+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Utility.h"; sourceTree = "<group>"; };
+		5C629A801EAAF22D00DABB06 /* UILabel+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Utility.m"; sourceTree = "<group>"; };
+		5C6505BF1E9B6B1F0052E904 /* ArticleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListViewController.h; sourceTree = "<group>"; };
+		5C6505C01E9B6B1F0052E904 /* ArticleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListViewController.m; sourceTree = "<group>"; };
+		5C6505C21E9B6B2F0052E904 /* QuizListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizListViewController.h; sourceTree = "<group>"; };
+		5C6505C31E9B6B2F0052E904 /* QuizListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizListViewController.m; sourceTree = "<group>"; };
 		5C7D85261E7D54D40013F82A /* Translate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7D852A1E7D54D40013F82A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5C7D852C1E7D54D40013F82A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5C7D852D1E7D54D40013F82A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5C7D85331E7D54D40013F82A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C7D85351E7D54D40013F82A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C7D85381E7D54D40013F82A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C7D853A1E7D54D40013F82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CA3AA521E7D5BAA0049ACF8 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		5CE5D8AE1E928257002A981D /* 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1.json; sourceTree = "<group>"; };
-		5CE5D8B41E93283D002A981D /* QuizListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizListTableViewController.h; sourceTree = "<group>"; };
-		5CE5D8B51E93283D002A981D /* QuizListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizListTableViewController.m; sourceTree = "<group>"; };
-		5CE5D8B71E932853002A981D /* ArticleListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListTableViewController.h; sourceTree = "<group>"; };
-		5CE5D8B81E932853002A981D /* ArticleListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListTableViewController.m; sourceTree = "<group>"; };
 		5CE5D8C51E9381D3002A981D /* QuizTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizTableViewCell.h; sourceTree = "<group>"; };
 		5CE5D8C61E9381D3002A981D /* QuizTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizTableViewCell.m; sourceTree = "<group>"; };
 		5CE5D8C81E9381DF002A981D /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
 		5CE5D8C91E9381DF002A981D /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
+		5CE5D8EF1E9665C1002A981D /* globishWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = globishWords.txt; sourceTree = "<group>"; };
+		5CE5D8F11E9673B7002A981D /* NSString+Helplers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Helplers.h"; sourceTree = "<group>"; };
+		5CE5D8F21E9673B7002A981D /* NSString+Helplers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Helplers.m"; sourceTree = "<group>"; };
 		5CF541FC1E8F4E1B0027B911 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		5CF5426B1E8FD4910027B911 /* WLQuiz+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WLQuiz+CoreDataClass.h"; sourceTree = "<group>"; };
 		5CF5426C1E8FD4910027B911 /* WLQuiz+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WLQuiz+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -124,6 +145,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C629A6F1EAAEB7000DABB06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C629A701EAAEBB800DABB06 /* NoteView.h */,
+				5C629A711EAAEBB800DABB06 /* NoteView.m */,
+				5C629A721EAAEBB800DABB06 /* ScrollableLabelView.h */,
+				5C629A731EAAEBB800DABB06 /* ScrollableLabelView.m */,
+				5C629A741EAAEBB800DABB06 /* SelectableTableView.h */,
+				5C629A751EAAEBB800DABB06 /* SelectableTableView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5C7D851D1E7D54D40013F82A = {
 			isa = PBXGroup;
 			children = (
@@ -150,11 +184,11 @@
 				5CF5429B1E8FE8480027B911 /* Manager */,
 				5CF542931E8FE3EB0027B911 /* Category */,
 				5CF542B51E8FF0540027B911 /* Controller */,
+				5C629A6F1EAAEB7000DABB06 /* View */,
 				5CE5D8C41E9381B9002A981D /* Cell */,
 				5CF541FA1E8F4E000027B911 /* Database */,
 				5C7D852C1E7D54D40013F82A /* AppDelegate.h */,
 				5C7D852D1E7D54D40013F82A /* AppDelegate.m */,
-				5C7D85321E7D54D40013F82A /* Main.storyboard */,
 				5C7D85351E7D54D40013F82A /* Assets.xcassets */,
 				5C7D85371E7D54D40013F82A /* LaunchScreen.storyboard */,
 				5C7D853A1E7D54D40013F82A /* Info.plist */,
@@ -208,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				5CE5D8AE1E928257002A981D /* 1.json */,
+				5CE5D8EF1E9665C1002A981D /* globishWords.txt */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -215,8 +250,14 @@
 		5CF542931E8FE3EB0027B911 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5CE5D8F11E9673B7002A981D /* NSString+Helplers.h */,
+				5CE5D8F21E9673B7002A981D /* NSString+Helplers.m */,
 				5CF542941E8FE4AE0027B911 /* NSManagedObject+operation.h */,
 				5CF542951E8FE4AE0027B911 /* NSManagedObject+operation.m */,
+				5C629A791EAAEBED00DABB06 /* UITableViewCell+Helpers.h */,
+				5C629A7A1EAAEBED00DABB06 /* UITableViewCell+Helpers.m */,
+				5C629A7F1EAAF22D00DABB06 /* UILabel+Utility.h */,
+				5C629A801EAAF22D00DABB06 /* UILabel+Utility.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -262,12 +303,14 @@
 		5CF542B51E8FF0540027B911 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5CE5D8B71E932853002A981D /* ArticleListTableViewController.h */,
-				5CE5D8B81E932853002A981D /* ArticleListTableViewController.m */,
-				5CE5D8B41E93283D002A981D /* QuizListTableViewController.h */,
-				5CE5D8B51E93283D002A981D /* QuizListTableViewController.m */,
+				5C6505BF1E9B6B1F0052E904 /* ArticleListViewController.h */,
+				5C6505C01E9B6B1F0052E904 /* ArticleListViewController.m */,
+				5C6505C21E9B6B2F0052E904 /* QuizListViewController.h */,
+				5C6505C31E9B6B2F0052E904 /* QuizListViewController.m */,
 				5CF542B71E8FF0690027B911 /* QuizViewController.h */,
 				5CF542B61E8FF0690027B911 /* QuizViewController.m */,
+				5C629A7C1EAAEF6800DABB06 /* CompletedQuizViewController.h */,
+				5C629A7D1EAAEF6800DABB06 /* CompletedQuizViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -344,7 +387,7 @@
 					};
 					5CF542BC1E8FF1470027B911 = {
 						CreatedOnToolsVersion = 8.3;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = 5C7D85251E7D54D40013F82A;
 					};
 				};
@@ -376,7 +419,7 @@
 				5CE5D8AF1E928257002A981D /* 1.json in Resources */,
 				5C7D85391E7D54D40013F82A /* LaunchScreen.storyboard in Resources */,
 				5C7D85361E7D54D40013F82A /* Assets.xcassets in Resources */,
-				5C7D85341E7D54D40013F82A /* Main.storyboard in Resources */,
+				5CE5D8F01E9665C1002A981D /* globishWords.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,24 +440,31 @@
 				5CF542781E8FD4910027B911 /* WLQuiz+CoreDataProperties.m in Sources */,
 				5CF542B11E8FF0380027B911 /* NSMutableDictionary+DMPExtensions.m in Sources */,
 				5C7D852E1E7D54D40013F82A /* AppDelegate.m in Sources */,
+				5CE5D8F31E9673B7002A981D /* NSString+Helplers.m in Sources */,
 				5C7D852B1E7D54D40013F82A /* main.m in Sources */,
 				5CE5D8C71E9381D3002A981D /* QuizTableViewCell.m in Sources */,
+				5C629A761EAAEBB800DABB06 /* NoteView.m in Sources */,
+				5C629A781EAAEBB800DABB06 /* SelectableTableView.m in Sources */,
 				5CF5427C1E8FD4910027B911 /* WLArticle+CoreDataProperties.m in Sources */,
 				5CF542AF1E8FF0380027B911 /* DiffMatchPatch.m in Sources */,
 				5CF542791E8FD4910027B911 /* WLDiffWord+CoreDataClass.m in Sources */,
+				5C629A7E1EAAEF6800DABB06 /* CompletedQuizViewController.m in Sources */,
+				5C629A811EAAF22D00DABB06 /* UILabel+Utility.m in Sources */,
 				5CE5D8CA1E9381E0002A981D /* ArticleTableViewCell.m in Sources */,
 				5CF542B81E8FF0690027B911 /* QuizViewController.m in Sources */,
-				5CE5D8B91E932853002A981D /* ArticleListTableViewController.m in Sources */,
-				5CE5D8B61E93283D002A981D /* QuizListTableViewController.m in Sources */,
+				5C6505C11E9B6B1F0052E904 /* ArticleListViewController.m in Sources */,
 				5CF542771E8FD4910027B911 /* WLQuiz+CoreDataClass.m in Sources */,
 				5CF542B21E8FF0380027B911 /* NSString+JavaSubstring.m in Sources */,
 				5CF542B31E8FF0380027B911 /* NSString+UnicharUtilities.m in Sources */,
 				5CF5429E1E8FE8480027B911 /* WLCoreDataManager.m in Sources */,
 				5CF541FD1E8F4E1B0027B911 /* Model.xcdatamodeld in Sources */,
+				5C629A7B1EAAEBED00DABB06 /* UITableViewCell+Helpers.m in Sources */,
 				5CF5427A1E8FD4910027B911 /* WLDiffWord+CoreDataProperties.m in Sources */,
 				5CF542B01E8FF0380027B911 /* DiffMatchPatchCFUtilities.c in Sources */,
 				5CF542961E8FE4AE0027B911 /* NSManagedObject+operation.m in Sources */,
+				5C6505C41E9B6B2F0052E904 /* QuizListViewController.m in Sources */,
 				5CF5427B1E8FD4910027B911 /* WLArticle+CoreDataClass.m in Sources */,
+				5C629A771EAAEBB800DABB06 /* ScrollableLabelView.m in Sources */,
 				5CF542B41E8FF0380027B911 /* NSString+UriCompatibility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,14 +488,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5C7D85321E7D54D40013F82A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5C7D85331E7D54D40013F82A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5C7D85371E7D54D40013F82A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -591,6 +633,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Translate/PrefixHeader.pch";
 				INFOPLIST_FILE = TranslateTests/Info.plist;
@@ -598,6 +641,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TranslateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Translate.app/Translate";
 			};
 			name = Debug;
@@ -607,6 +651,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Translate/PrefixHeader.pch";
 				INFOPLIST_FILE = TranslateTests/Info.plist;
@@ -614,6 +659,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TranslateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Translate.app/Translate";
 			};
 			name = Release;

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ArticleListViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -15,8 +16,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    NSLog(@"");
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    self.window = [[UIWindow alloc] initWithFrame:rect];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    ArticleListViewController *viewController = [[ArticleListViewController alloc] init];
+    //self.window.rootViewController = viewController;
+    
+    UINavigationController *navigationController =[[UINavigationController alloc] initWithRootViewController:viewController];
+    navigationController.navigationBar.translucent = NO;
+    self.window.rootViewController = navigationController;
 
     return YES;
 }

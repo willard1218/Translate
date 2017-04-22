@@ -9,10 +9,9 @@
 #import "QuizViewController.h"
 #import "WLArticle+CoreDataClass.h"
 #import "WLQuiz+CoreDataClass.h"
+#import "ScrollableLabelView.h"
 @interface QuizViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *diffWordsLabel;
-@property (weak, nonatomic) IBOutlet UITextView *answerTextView;
+
 @end
 
 @implementation QuizViewController
@@ -22,27 +21,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Quiz";
-    _questionLabel.text = _quiz.question;
-    _answerTextView.delegate = self;
+    _questionScrollableLabel = [[ScrollableLabelView alloc] init];
+    
+    
+    _questionScrollableLabel.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:_questionScrollableLabel];
+    
+    _questionScrollableLabel.text = @"非常謝謝你，克里斯。能有這個機會第二度踏上這個演講台真是一大榮幸。我非常感激。這個研討會給我留下了極為深刻的印象，我想感謝大家對我之前演講的好評。非常謝謝你，克里斯。能有這個機會第二度踏上這個演講台真是一大榮幸。我非常感激。這個研討會給我留下了極為深刻的印象，我想感謝大家對我之前演講的好評。非常謝謝你，克里斯。能有這個機會第二度踏上這個演講台真是一大榮幸。我非常感激。這個研討會給我留下了極為深刻的印象，我想感謝大家對我之前演講的講台真是一大榮幸。我非常感激。這個研討會給我留下了極為深刻的印象，我想感謝大家對我之前 ";
+    
+    [self addQuestionScrollableLabelConstraint];
 }
 
--(BOOL)textViewShouldBeginEditing:(UITextView *)textView{
-    _answerTextView.text = nil;
-    return YES;
+- (void)addQuestionScrollableLabelConstraint {
+    _questionScrollableLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [_questionScrollableLabel.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:10].active = YES;
+    
+    [_questionScrollableLabel.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:10].active = YES;
+    
+    [_questionScrollableLabel.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-10].active = YES;
+    
+    [_questionScrollableLabel.heightAnchor constraintEqualToConstant:100].active = YES;
 }
-
-
-- (IBAction)submit:(UIButton *)sender {
-    [_answerTextView resignFirstResponder];
-    [_quiz submitWithUserAnswer:_answerTextView.text];
-    _diffWordsLabel.attributedText = _quiz.attributedString;
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end
