@@ -33,33 +33,23 @@
     [self layoutIfNeeded];
 }
 
-- (void)setLabelConstraint {
-    _label.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [_label removeConstraints:_label.constraints];
-    
-    [_label.topAnchor constraintEqualToAnchor:self.topAnchor constant:0].active = YES;
-    
-    [_label.leftAnchor constraintEqualToAnchor:self.leftAnchor constant:0].active = YES;
-    
-    [_label.widthAnchor constraintEqualToAnchor:self.widthAnchor].active = YES;
-    
-    CGFloat h = [_label textHeightForWidth:self.frame.size.width];
-    
-    [_label.heightAnchor constraintEqualToConstant:h].active = YES;
+- (void)addLabelConstraint {
+    [_label mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.mas_top);
+        make.left.equalTo(self.mas_left);
+        CGFloat height = [_label textHeightForWidth:self.frame.size.width];
+        make.width.equalTo(self.mas_width);
+        make.height.equalTo(@(height));
+    }];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [self setLabelConstraint];
+    [self addLabelConstraint];
     CGFloat height = [_label textHeightForWidth:_label.frame.size.width];
     
     CGSize scrollableSize = CGSizeMake(0, height);
     [self setContentSize:scrollableSize];
-}
-
-- (void)didMoveToSuperview {
-    [super didMoveToSuperview];
 }
 
 

@@ -47,31 +47,24 @@
     _segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
     [self addSubview:_segmentedControl];
     
-    _segmentedControl.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [_segmentedControl.leftAnchor constraintEqualToAnchor:self.leftAnchor constant:10].active = YES;
-    
-    [_segmentedControl.rightAnchor constraintEqualToAnchor:self.rightAnchor constant:-10].active = YES;
-    
-    [_segmentedControl.topAnchor constraintEqualToAnchor:self.topAnchor constant:10].active = YES;
-    
-    [_segmentedControl.heightAnchor constraintEqualToConstant:50].active = YES;
+    [_segmentedControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.mas_top).offset(10);
+        make.left.equalTo(self.mas_left).offset(10);
+        make.right.equalTo(self.mas_right).offset(-10);
+        make.height.equalTo(@50);
+    }];
 }
 
 - (void)setupTableView {
     _tableView = [[UITableView alloc] init];
     [self addSubview:_tableView];
     
-    _tableView.translatesAutoresizingMaskIntoConstraints = NO;
-
-    [_tableView.leftAnchor constraintEqualToAnchor:self.leftAnchor constant:10].active = YES;
-    
-    [_tableView.rightAnchor constraintEqualToAnchor:self.rightAnchor constant:-10].active = YES;
-    
-    [_tableView.topAnchor constraintEqualToAnchor:_segmentedControl.bottomAnchor constant:10].active = YES;
-    
-    [_tableView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:-10].active = YES;
-    
+    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_segmentedControl.mas_bottom).offset(10);
+        make.left.equalTo(self.mas_left).offset(10);
+        make.right.equalTo(self.mas_right).offset(-10);
+        make.bottom.equalTo(self.mas_bottom).offset(-10);
+    }];
 }
 
 @end

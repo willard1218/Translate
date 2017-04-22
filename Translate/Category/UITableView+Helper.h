@@ -14,6 +14,6 @@
 
 - (void)registerClassList:(NSArray <Class> *_Nonnull)cellClassList;
 
-- (__kindof UITableViewCell *_Nonnull)dequeueReusableCellWithClass:(_Nonnull Class)cellClass forIndexPath:(NSIndexPath *)indexPath;
+- (__kindof UITableViewCell *_Nonnull)dequeueReusableCellWithClass:(_Nonnull Class)cellClass forIndexPath:(NSIndexPath *_Nonnull)indexPath;
 
 @end

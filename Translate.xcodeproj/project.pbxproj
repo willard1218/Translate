@@ -13,6 +13,18 @@
 		5C629A7E1EAAEF6800DABB06 /* CompletedQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A7D1EAAEF6800DABB06 /* CompletedQuizViewController.m */; };
 		5C629A811EAAF22D00DABB06 /* UILabel+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A801EAAF22D00DABB06 /* UILabel+Utility.m */; };
 		5C629A841EAB0D1500DABB06 /* UITableView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A831EAB0D1500DABB06 /* UITableView+Helper.m */; };
+		5C629A871EAB39DB00DABB06 /* NotCompletedQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A861EAB39DB00DABB06 /* NotCompletedQuizViewController.m */; };
+		5C629ACA1EAB408100DABB06 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C629AB01EAB408100DABB06 /* Info.plist */; };
+		5C629ACB1EAB408100DABB06 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629AB21EAB408100DABB06 /* MASCompositeConstraint.m */; };
+		5C629ACC1EAB408100DABB06 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629AB51EAB408100DABB06 /* MASConstraint.m */; };
+		5C629ACD1EAB408100DABB06 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629AB71EAB408100DABB06 /* MASConstraintMaker.m */; };
+		5C629ACE1EAB408100DABB06 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629AB91EAB408100DABB06 /* MASLayoutConstraint.m */; };
+		5C629ACF1EAB408100DABB06 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629ABD1EAB408100DABB06 /* MASViewAttribute.m */; };
+		5C629AD01EAB408100DABB06 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629ABF1EAB408100DABB06 /* MASViewConstraint.m */; };
+		5C629AD11EAB408100DABB06 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629AC11EAB408100DABB06 /* NSArray+MASAdditions.m */; };
+		5C629AD21EAB408100DABB06 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629AC41EAB408100DABB06 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		5C629AD31EAB408100DABB06 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629AC61EAB408100DABB06 /* View+MASAdditions.m */; };
+		5C629AD41EAB408100DABB06 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629AC91EAB408100DABB06 /* ViewController+MASAdditions.m */; };
 		5C6505C11E9B6B1F0052E904 /* ArticleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6505C01E9B6B1F0052E904 /* ArticleListViewController.m */; };
 		5C6505C41E9B6B2F0052E904 /* QuizListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6505C31E9B6B2F0052E904 /* QuizListViewController.m */; };
 		5C7D852B1E7D54D40013F82A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D852A1E7D54D40013F82A /* main.m */; };
@@ -67,6 +79,34 @@
 		5C629A801EAAF22D00DABB06 /* UILabel+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Utility.m"; sourceTree = "<group>"; };
 		5C629A821EAB0D1500DABB06 /* UITableView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Helper.h"; sourceTree = "<group>"; };
 		5C629A831EAB0D1500DABB06 /* UITableView+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Helper.m"; sourceTree = "<group>"; };
+		5C629A851EAB39DB00DABB06 /* NotCompletedQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotCompletedQuizViewController.h; sourceTree = "<group>"; };
+		5C629A861EAB39DB00DABB06 /* NotCompletedQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotCompletedQuizViewController.m; sourceTree = "<group>"; };
+		5C629AB01EAB408100DABB06 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C629AB11EAB408100DABB06 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		5C629AB21EAB408100DABB06 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		5C629AB31EAB408100DABB06 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		5C629AB41EAB408100DABB06 /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		5C629AB51EAB408100DABB06 /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		5C629AB61EAB408100DABB06 /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		5C629AB71EAB408100DABB06 /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		5C629AB81EAB408100DABB06 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		5C629AB91EAB408100DABB06 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		5C629ABA1EAB408100DABB06 /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		5C629ABB1EAB408100DABB06 /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		5C629ABC1EAB408100DABB06 /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		5C629ABD1EAB408100DABB06 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		5C629ABE1EAB408100DABB06 /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		5C629ABF1EAB408100DABB06 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		5C629AC01EAB408100DABB06 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		5C629AC11EAB408100DABB06 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		5C629AC21EAB408100DABB06 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		5C629AC31EAB408100DABB06 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		5C629AC41EAB408100DABB06 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		5C629AC51EAB408100DABB06 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		5C629AC61EAB408100DABB06 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		5C629AC71EAB408100DABB06 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		5C629AC81EAB408100DABB06 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		5C629AC91EAB408100DABB06 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		5C6505BF1E9B6B1F0052E904 /* ArticleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListViewController.h; sourceTree = "<group>"; };
 		5C6505C01E9B6B1F0052E904 /* ArticleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListViewController.m; sourceTree = "<group>"; };
 		5C6505C21E9B6B2F0052E904 /* QuizListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizListViewController.h; sourceTree = "<group>"; };
@@ -156,6 +196,39 @@
 				5C629A751EAAEBB800DABB06 /* SelectableTableView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5C629AAF1EAB408100DABB06 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				5C629AB01EAB408100DABB06 /* Info.plist */,
+				5C629AB11EAB408100DABB06 /* MASCompositeConstraint.h */,
+				5C629AB21EAB408100DABB06 /* MASCompositeConstraint.m */,
+				5C629AB31EAB408100DABB06 /* MASConstraint+Private.h */,
+				5C629AB41EAB408100DABB06 /* MASConstraint.h */,
+				5C629AB51EAB408100DABB06 /* MASConstraint.m */,
+				5C629AB61EAB408100DABB06 /* MASConstraintMaker.h */,
+				5C629AB71EAB408100DABB06 /* MASConstraintMaker.m */,
+				5C629AB81EAB408100DABB06 /* MASLayoutConstraint.h */,
+				5C629AB91EAB408100DABB06 /* MASLayoutConstraint.m */,
+				5C629ABA1EAB408100DABB06 /* Masonry.h */,
+				5C629ABB1EAB408100DABB06 /* MASUtilities.h */,
+				5C629ABC1EAB408100DABB06 /* MASViewAttribute.h */,
+				5C629ABD1EAB408100DABB06 /* MASViewAttribute.m */,
+				5C629ABE1EAB408100DABB06 /* MASViewConstraint.h */,
+				5C629ABF1EAB408100DABB06 /* MASViewConstraint.m */,
+				5C629AC01EAB408100DABB06 /* NSArray+MASAdditions.h */,
+				5C629AC11EAB408100DABB06 /* NSArray+MASAdditions.m */,
+				5C629AC21EAB408100DABB06 /* NSArray+MASShorthandAdditions.h */,
+				5C629AC31EAB408100DABB06 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				5C629AC41EAB408100DABB06 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				5C629AC51EAB408100DABB06 /* View+MASAdditions.h */,
+				5C629AC61EAB408100DABB06 /* View+MASAdditions.m */,
+				5C629AC71EAB408100DABB06 /* View+MASShorthandAdditions.h */,
+				5C629AC81EAB408100DABB06 /* ViewController+MASAdditions.h */,
+				5C629AC91EAB408100DABB06 /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
 			sourceTree = "<group>";
 		};
 		5C7D851D1E7D54D40013F82A = {
@@ -274,6 +347,7 @@
 		5CF5429F1E8FF0380027B911 /* 3rdLib */ = {
 			isa = PBXGroup;
 			children = (
+				5C629AAF1EAB408100DABB06 /* Masonry */,
 				5CF542A01E8FF0380027B911 /* Google-Diff-Match-Patch--C */,
 			);
 			path = 3rdLib;
@@ -311,6 +385,8 @@
 				5CF542B61E8FF0690027B911 /* QuizViewController.m */,
 				5C629A7C1EAAEF6800DABB06 /* CompletedQuizViewController.h */,
 				5C629A7D1EAAEF6800DABB06 /* CompletedQuizViewController.m */,
+				5C629A851EAB39DB00DABB06 /* NotCompletedQuizViewController.h */,
+				5C629A861EAB39DB00DABB06 /* NotCompletedQuizViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -419,6 +495,7 @@
 				5CE5D8AF1E928257002A981D /* 1.json in Resources */,
 				5C7D85391E7D54D40013F82A /* LaunchScreen.storyboard in Resources */,
 				5C7D85361E7D54D40013F82A /* Assets.xcassets in Resources */,
+				5C629ACA1EAB408100DABB06 /* Info.plist in Resources */,
 				5CE5D8F01E9665C1002A981D /* globishWords.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,9 +518,12 @@
 				5CF542B11E8FF0380027B911 /* NSMutableDictionary+DMPExtensions.m in Sources */,
 				5C7D852E1E7D54D40013F82A /* AppDelegate.m in Sources */,
 				5CE5D8F31E9673B7002A981D /* NSString+Helplers.m in Sources */,
+				5C629AD11EAB408100DABB06 /* NSArray+MASAdditions.m in Sources */,
 				5C7D852B1E7D54D40013F82A /* main.m in Sources */,
 				5CE5D8C71E9381D3002A981D /* QuizTableViewCell.m in Sources */,
 				5C629A761EAAEBB800DABB06 /* NoteView.m in Sources */,
+				5C629AD31EAB408100DABB06 /* View+MASAdditions.m in Sources */,
+				5C629ACB1EAB408100DABB06 /* MASCompositeConstraint.m in Sources */,
 				5C629A781EAAEBB800DABB06 /* SelectableTableView.m in Sources */,
 				5CF5427C1E8FD4910027B911 /* WLArticle+CoreDataProperties.m in Sources */,
 				5CF542AF1E8FF0380027B911 /* DiffMatchPatch.m in Sources */,
@@ -451,16 +531,24 @@
 				5C629A7E1EAAEF6800DABB06 /* CompletedQuizViewController.m in Sources */,
 				5C629A811EAAF22D00DABB06 /* UILabel+Utility.m in Sources */,
 				5C629A841EAB0D1500DABB06 /* UITableView+Helper.m in Sources */,
+				5C629ACF1EAB408100DABB06 /* MASViewAttribute.m in Sources */,
+				5C629A871EAB39DB00DABB06 /* NotCompletedQuizViewController.m in Sources */,
+				5C629ACC1EAB408100DABB06 /* MASConstraint.m in Sources */,
 				5CE5D8CA1E9381E0002A981D /* ArticleTableViewCell.m in Sources */,
 				5CF542B81E8FF0690027B911 /* QuizViewController.m in Sources */,
 				5C6505C11E9B6B1F0052E904 /* ArticleListViewController.m in Sources */,
+				5C629ACD1EAB408100DABB06 /* MASConstraintMaker.m in Sources */,
 				5CF542771E8FD4910027B911 /* WLQuiz+CoreDataClass.m in Sources */,
 				5CF542B21E8FF0380027B911 /* NSString+JavaSubstring.m in Sources */,
+				5C629AD41EAB408100DABB06 /* ViewController+MASAdditions.m in Sources */,
 				5CF542B31E8FF0380027B911 /* NSString+UnicharUtilities.m in Sources */,
 				5CF5429E1E8FE8480027B911 /* WLCoreDataManager.m in Sources */,
+				5C629AD21EAB408100DABB06 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				5CF541FD1E8F4E1B0027B911 /* Model.xcdatamodeld in Sources */,
+				5C629AD01EAB408100DABB06 /* MASViewConstraint.m in Sources */,
 				5CF5427A1E8FD4910027B911 /* WLDiffWord+CoreDataProperties.m in Sources */,
 				5CF542B01E8FF0380027B911 /* DiffMatchPatchCFUtilities.c in Sources */,
+				5C629ACE1EAB408100DABB06 /* MASLayoutConstraint.m in Sources */,
 				5CF542961E8FE4AE0027B911 /* NSManagedObject+operation.m in Sources */,
 				5C6505C41E9B6B2F0052E904 /* QuizListViewController.m in Sources */,
 				5CF5427B1E8FD4910027B911 /* WLArticle+CoreDataClass.m in Sources */,

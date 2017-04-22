@@ -13,6 +13,7 @@
 #import "SelectableTableView.h"
 #import "QuizTableViewCell.h"
 #import "CompletedQuizViewController.h"
+#import "NotCompletedQuizViewController.h"
 
 @interface QuizListViewController ()
 @property (nonatomic, strong) UITableView *tableView;
@@ -108,7 +109,7 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    CompletedQuizViewController *viewController = [[CompletedQuizViewController alloc] init];
+   NotCompletedQuizViewController *viewController = [[NotCompletedQuizViewController alloc] init];
     viewController.view.backgroundColor = [UIColor whiteColor];
     viewController.quiz = _article.quizs[indexPath.row];
 

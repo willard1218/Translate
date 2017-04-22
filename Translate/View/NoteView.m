@@ -87,9 +87,10 @@
 
         t1.translatesAutoresizingMaskIntoConstraints = NO;
         t1.backgroundColor = [UIColor whiteColor];
-        
-        [t1.heightAnchor constraintEqualToConstant:50].active = YES;
-        [t1.widthAnchor constraintEqualToConstant:self.frame.size.width - 50].active = YES;
+        [t1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@50);
+            make.width.equalTo(self.mas_width).offset(-50);
+        }];
         
         [_stackView addArrangedSubview:t1];
     }

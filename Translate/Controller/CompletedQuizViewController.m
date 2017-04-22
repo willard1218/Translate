@@ -65,24 +65,21 @@
 }
 
 - (void)addDiffWordScrollableLabelConstraint {
-    [_diffWordsScrollableLabelView.topAnchor constraintEqualToAnchor:self.questionScrollableLabel.bottomAnchor constant:10].active = YES;
-    
-    [_diffWordsScrollableLabelView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:10].active = YES;
-    
-    [_diffWordsScrollableLabelView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-10].active = YES;
-    
-    [_diffWordsScrollableLabelView.heightAnchor constraintEqualToConstant:100].active = YES;
+    [_diffWordsScrollableLabelView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.questionScrollableLabel.mas_bottom).offset(10);
+        make.left.equalTo(self.view).offset(10);
+        make.right.equalTo(self.view).offset(-10);
+        make.height.equalTo(@100);
+    }];
 }
 
 - (void)addNoteViewConstraint {
-    _noteView.translatesAutoresizingMaskIntoConstraints = NO;
-    [_noteView.topAnchor constraintEqualToAnchor:_diffWordsScrollableLabelView.bottomAnchor constant:10].active = YES;
-    [_noteView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:10].active = YES;
-    [_noteView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-10].active = YES;
-    
-    
-    [_noteView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-10].active = YES;
-    //[self.view layoutIfNeeded];
+    [_noteView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.diffWordsScrollableLabelView.mas_bottom).offset(10);
+        make.left.equalTo(self.view).offset(10);
+        make.right.equalTo(self.view).offset(-10);
+        make.bottom.equalTo(self.view).offset(-10);
+    }];
 }
 
 - (void)addNote {
@@ -91,10 +88,6 @@
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {
-    CGRect keyboardFrame = [[notification userInfo][UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    
-    CGSize keyboardSize = keyboardFrame.size;
-    
   
     
     NSTimeInterval showDuration = [[notification userInfo][UIKeyboardAnimationDurationUserInfoKey] doubleValue];

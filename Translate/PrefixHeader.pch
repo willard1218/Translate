@@ -19,6 +19,7 @@
 #import "NSString+Helplers.h"
 #import "UILabel+Utility.h"
 #import "UITableView+Helper.h"
+#import "Masonry.h"
 #endif
 
 // Include any system framework and library headers here that should be included in all compilation units.
