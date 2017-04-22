@@ -30,28 +30,25 @@
 }
 
 - (void)addScrollViewConstraints {
-    _scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [_scrollView.topAnchor constraintEqualToAnchor:_titleLabel.bottomAnchor constant:10].active = YES;
-    [_scrollView.leftAnchor constraintEqualToAnchor:self.leftAnchor].active = YES;
-    [_scrollView.rightAnchor constraintEqualToAnchor:self.rightAnchor].active = YES;
-    [_scrollView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:-10].active = YES;
+    [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self);
+        make.top.equalTo(_titleLabel.mas_bottom).offset(10);
+        make.bottom.equalTo(self.mas_bottom).offset(-10);
+    }];
 }
 
 - (void)addTitleConstraints {
-    _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [_titleLabel.topAnchor constraintEqualToAnchor:self.topAnchor constant:10].active = YES;
-    [_titleLabel.leftAnchor constraintEqualToAnchor:self.leftAnchor constant:10].active = YES;
-    [_titleLabel.widthAnchor constraintEqualToConstant:100].active = YES;
-    [_titleLabel.heightAnchor constraintEqualToConstant:20].active = YES;
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.and.left.equalTo(self).offset(10);
+        make.size.mas_equalTo(CGSizeMake(100, 20));
+    }];
 }
 
 - (void)addStackViewConstraints {
-    _stackView.translatesAutoresizingMaskIntoConstraints = NO;
-    [_stackView.centerXAnchor constraintEqualToAnchor:_scrollView.centerXAnchor].active= YES;
-    [_stackView.topAnchor constraintEqualToAnchor:_scrollView.topAnchor].active = YES;
-    [_stackView.bottomAnchor constraintEqualToAnchor:_scrollView.bottomAnchor].active = YES;
+    [_stackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(_scrollView.mas_centerX);
+        make.top.and.bottom.equalTo(_scrollView);
+    }];
 }
 
 - (void)setupView {
@@ -84,15 +81,15 @@
     
     for (int i = 0; i < 10; i++) {
         UITextView *t1 = [[UITextView alloc] init];
-
+        [_stackView addArrangedSubview:t1];
         t1.translatesAutoresizingMaskIntoConstraints = NO;
         t1.backgroundColor = [UIColor whiteColor];
         [t1 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(@50);
-            make.width.equalTo(self.mas_width).offset(-50);
+            make.width.equalTo(@(self.frame.size.width-50));
         }];
         
-        [_stackView addArrangedSubview:t1];
+        
     }
 }
 

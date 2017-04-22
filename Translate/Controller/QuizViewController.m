@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.title = @"Quiz";
     _questionScrollableLabel = [[ScrollableLabelView alloc] init];
     
@@ -31,8 +32,7 @@
 
 - (void)addQuestionScrollableLabelConstraint {
     [_questionScrollableLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).with.offset(10);
-        make.left.equalTo(self.view.mas_left).with.offset(10);
+        make.top.and.left.equalTo(self.view).offset(10);
         make.right.equalTo(self.view.mas_right).with.offset(-10);
         make.height.equalTo(@100);
     }];

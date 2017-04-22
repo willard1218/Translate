@@ -67,8 +67,8 @@
 - (void)addDiffWordScrollableLabelConstraint {
     [_diffWordsScrollableLabelView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.questionScrollableLabel.mas_bottom).offset(10);
-        make.left.equalTo(self.view).offset(10);
-        make.right.equalTo(self.view).offset(-10);
+        make.left.equalTo(self.view.mas_left).offset(10);
+        make.right.equalTo(self.view.mas_right).offset(-10);
         make.height.equalTo(@100);
     }];
 }
@@ -76,9 +76,8 @@
 - (void)addNoteViewConstraint {
     [_noteView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.diffWordsScrollableLabelView.mas_bottom).offset(10);
-        make.left.equalTo(self.view).offset(10);
-        make.right.equalTo(self.view).offset(-10);
-        make.bottom.equalTo(self.view).offset(-10);
+        make.left.equalTo(self.view.mas_left).offset(10);
+        make.right.and.bottom.equalTo(self.view).offset(-10);
     }];
 }
 

@@ -48,8 +48,7 @@
     [self addSubview:_segmentedControl];
     
     [_segmentedControl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_top).offset(10);
-        make.left.equalTo(self.mas_left).offset(10);
+        make.top.and.left.equalTo(self).offset(10);
         make.right.equalTo(self.mas_right).offset(-10);
         make.height.equalTo(@50);
     }];
@@ -62,8 +61,7 @@
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_segmentedControl.mas_bottom).offset(10);
         make.left.equalTo(self.mas_left).offset(10);
-        make.right.equalTo(self.mas_right).offset(-10);
-        make.bottom.equalTo(self.mas_bottom).offset(-10);
+        make.right.and.bottom.equalTo(self).offset(-10);
     }];
 }
 

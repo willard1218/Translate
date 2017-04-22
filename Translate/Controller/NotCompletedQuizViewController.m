@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     _answerTextView = [[UITextView alloc] init];
     _answerTextView.backgroundColor = [UIColor redColor];
     [self.view addSubview:_answerTextView];
