@@ -38,9 +38,8 @@
 
 - (void)addLabelConstraint {
     [_label mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.and.left.equalTo(self);
+        make.top.and.left.and.width.equalTo(self);
         CGFloat height = [_label textHeightForWidth:self.frame.size.width];
-        make.width.equalTo(self.mas_width);
         make.height.equalTo(@(height));
     }];
 }
