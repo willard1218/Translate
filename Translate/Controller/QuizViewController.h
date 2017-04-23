@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 @class WLQuiz;
-@class ScrollableLabelView;
+@class WLTextView;
 @interface QuizViewController : UIViewController
 @property (weak, nonatomic) WLQuiz *quiz;
-@property (nonatomic, strong) ScrollableLabelView *questionScrollableLabel;
+@property (nonatomic, strong) WLTextView *questionTextView;
 @end
 

@@ -7,9 +7,9 @@
 //
 
 #import "QuizViewController.h"
-@class ScrollableLabelView;
+@class WLTextView;
 @class NoteView;
 @interface CompletedQuizViewController : QuizViewController
-@property (nonatomic, strong) ScrollableLabelView *diffWordsScrollableLabelView;
+@property (nonatomic, strong) WLTextView *diffWordsTextView;
 @property (nonatomic, strong) NoteView *noteView;
 @end

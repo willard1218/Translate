@@ -9,7 +9,7 @@
 #import "QuizViewController.h"
 #import "WLArticle+CoreDataClass.h"
 #import "WLQuiz+CoreDataClass.h"
-#import "ScrollableLabelView.h"
+#import "WLTextView.h"
 @interface QuizViewController ()
 
 @end
@@ -18,7 +18,8 @@
 
 - (void)setup {
     [super setup];
-    _questionScrollableLabel = [[ScrollableLabelView alloc] init];
+    _questionTextView = [[WLTextView alloc] init];
+    _questionTextView.editable = NO;
 }
 
 - (void)viewDidLoad {
@@ -27,12 +28,12 @@
     self.title = @"Quiz";
     
     
-    [self.view addSubview:_questionScrollableLabel];
-    [self addQuestionScrollableLabelConstraint];
+    [self.view addSubview:_questionTextView];
+    [self addQuestionTextViewConstraint];
 }
 
-- (void)addQuestionScrollableLabelConstraint {
-    [_questionScrollableLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+- (void)addQuestionTextViewConstraint {
+    [_questionTextView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.and.left.equalTo(self.view).offset(10);
         make.right.equalTo(self.view.mas_right).offset(-10);
         make.height.equalTo(@100);
@@ -41,7 +42,7 @@
 
 - (void)setQuiz:(WLQuiz *)quiz {
     _quiz = quiz;
-    _questionScrollableLabel.text = _quiz.question;
+    _questionTextView.text = _quiz.question;
 }
 
 

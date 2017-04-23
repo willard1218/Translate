@@ -7,10 +7,9 @@
 //
 
 #import "CompletedQuizViewController.h"
-#import "ScrollableLabelView.h"
 #import "NoteView.h"
 #import "WLQuiz+CoreDataClass.h"
-
+#import "WLTextView.h"
 @interface CompletedQuizViewController ()
 @end
 
@@ -24,7 +23,7 @@
 
 - (void)setup {
     [super setup];
-    _diffWordsScrollableLabelView = [[ScrollableLabelView alloc] init];
+    _diffWordsTextView = [[WLTextView alloc] init];
     _noteView = [[NoteView alloc] init];
 }
 
@@ -53,14 +52,14 @@
     
     
     
-    [self.view addSubview:_diffWordsScrollableLabelView];
+    [self.view addSubview:_diffWordsTextView];
     
     _noteView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:_noteView];
 
     
     
-    [self addDiffWordScrollableLabelConstraint];
+    [self addDiffWordTextViewConstraint];
     [self addNoteViewConstraint];
     
 }
@@ -72,9 +71,10 @@
     _noteView.scrollView.contentSize = size;
 }
 
-- (void)addDiffWordScrollableLabelConstraint {
-    [_diffWordsScrollableLabelView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.questionScrollableLabel.mas_bottom).offset(10);
+- (void)addDiffWordTextViewConstraint {
+    
+    [_diffWordsTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.questionTextView.mas_bottom).offset(10);
         make.left.equalTo(self.view.mas_left).offset(10);
         make.right.equalTo(self.view.mas_right).offset(-10);
         make.height.equalTo(@100);
@@ -83,7 +83,7 @@
 
 - (void)addNoteViewConstraint {
     [_noteView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.diffWordsScrollableLabelView.mas_bottom).offset(10);
+        make.top.equalTo(self.diffWordsTextView.mas_bottom).offset(10);
         make.left.equalTo(self.view.mas_left).offset(10);
         make.right.and.bottom.equalTo(self.view).offset(-10);
     }];
@@ -96,7 +96,7 @@
 
 - (void)setQuiz:(WLQuiz *)quiz {
     [super setQuiz:quiz];
-    _diffWordsScrollableLabelView.attributedText = self.quiz.attributedString;
+    _diffWordsTextView.attributedText = self.quiz.attributedString;
 }
 
 

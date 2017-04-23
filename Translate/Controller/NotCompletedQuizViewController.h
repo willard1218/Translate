@@ -8,6 +8,6 @@
 
 #import "QuizViewController.h"
 
-@interface NotCompletedQuizViewController : QuizViewController
+@interface NotCompletedQuizViewController : QuizViewController <UITextViewDelegate>
 @property (nonatomic, strong) UITextView *answerTextView;
 @end
