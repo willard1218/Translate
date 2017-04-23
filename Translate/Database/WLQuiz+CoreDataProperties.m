@@ -63,23 +63,57 @@
     [self.diffWords.array filteredArrayUsingPredicate:predicate];
 }
 
+- (NSArray *)filterDiffWords:(NSArray <WLDiffWord *>*)diffWords
+        withoutOperation:(Operation)operation {
+    NSPredicate *preficate = [NSPredicate predicateWithFormat:@"self.operation != %d", operation];
+    return [diffWords filteredArrayUsingPredicate:preficate];
+}
+
+
 - (NSString *)diffWordsText {
-    NSArray<NSString *> *words = [self.diffWords.array valueForKey:@"text"];
-    return [words componentsJoinedByString:@""];
+    return [self textWithDiffWords:self.diffWords.array];
 }
 
 - (NSAttributedString *)attributedString {
-    NSString *diffWordsText = [self diffWordsText];
+    return [self attributedStringWithDiffWords:self.diffWords.array];
+}
+
+- (NSAttributedString *)attributedAnswerString {
+    return [self attributedStringWithDiffWords:self.diffWords.array withoutOperation:DIFF_DELETE];
+}
+
+- (NSAttributedString *)attributedUserAnswerString {
+    return [self attributedStringWithDiffWords:self.diffWords.array withoutOperation:DIFF_INSERT];
+}
+
+- (NSAttributedString *)attributedStringWithDiffWords:(NSArray <WLDiffWord *>*)diffWords
+                                     withoutOperation:(Operation)operation {
+    NSArray<WLDiffWord *> *answerDiffWords = [self filterDiffWords:diffWords
+                                                  withoutOperation:operation];
+    return [self attributedStringWithDiffWords:answerDiffWords];
+}
+
+- (NSAttributedString *)attributedStringWithDiffWords:(NSArray <WLDiffWord *>*)diffWords {
+    NSString *diffWordsText = [self textWithDiffWords:diffWords];
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:diffWordsText];
     
     NSUInteger idx = 0;
-    for (WLDiffWord *diffWord in self.diffWords) {
+    for (WLDiffWord *diffWord in diffWords) {
         NSUInteger wordLength = diffWord.text.length;
         [attrString addAttributes:diffWord.attributes range:NSMakeRange(idx, wordLength)];
         idx += wordLength;
     }
     
+    UIFont *text1Font = [UIFont systemFontOfSize:20];
+    
+    [attrString addAttributes:@{NSFontAttributeName:text1Font} range:NSMakeRange(0, idx)];
+
     return attrString;
+}
+
+- (NSString *)textWithDiffWords:(NSArray <WLDiffWord *>*)array {
+    NSArray<NSString *> *words = [array valueForKey:@"text"];
+    return [words componentsJoinedByString:@""];
 }
 
 

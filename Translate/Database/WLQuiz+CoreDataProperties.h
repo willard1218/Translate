@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<WLQuiz *> *)fetchRequest;
 - (void)submitWithUserAnswer:(NSString *)userAnswer;
-- (NSAttributedString *)attributedString ;
+- (NSAttributedString *)attributedString;
+- (NSAttributedString *)attributedAnswerString;
+- (NSAttributedString *)attributedUserAnswerString;
 
 @property (nullable, nonatomic, copy) NSString *answer;
 @property (nullable, nonatomic, copy) NSString *userAnswer;
