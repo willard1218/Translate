@@ -25,18 +25,10 @@
     return coreDataManager;
 }
 
-
-- (id)init
-{
-    self = [super init];
-    
-    if (self) {
-        [self setupManagedObjectContext];
-    }
-    
-    return self;
+- (void)setup {
+    [super setup];
+    [self setupManagedObjectContext];
 }
-
 
 - (void)setupManagedObjectContext
 {
