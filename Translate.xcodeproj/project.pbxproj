@@ -10,14 +10,12 @@
 		5C26B2E71EAC2ECA00F71E32 /* NSObject+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2E61EAC2ECA00F71E32 /* NSObject+Helpers.m */; };
 		5C26B2EC1EAC2FDF00F71E32 /* RuntimeHelper.h in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2EB1EAC2FDF00F71E32 /* RuntimeHelper.h */; };
 		5C26B2F21EACE34800F71E32 /* WLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2F11EACE34800F71E32 /* WLLabel.m */; };
-		5C26B2F51EACE74E00F71E32 /* WLTextViewPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2F41EACE74E00F71E32 /* WLTextViewPanel.m */; };
+		5C26B2F51EACE74E00F71E32 /* WLPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2F41EACE74E00F71E32 /* WLPanel.m */; };
 		5C629A761EAAEBB800DABB06 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A711EAAEBB800DABB06 /* NoteView.m */; };
 		5C629A771EAAEBB800DABB06 /* ScrollableLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A731EAAEBB800DABB06 /* ScrollableLabelView.m */; };
 		5C629A781EAAEBB800DABB06 /* SelectableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A751EAAEBB800DABB06 /* SelectableTableView.m */; };
-		5C629A7E1EAAEF6800DABB06 /* CompletedQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A7D1EAAEF6800DABB06 /* CompletedQuizViewController.m */; };
 		5C629A811EAAF22D00DABB06 /* UILabel+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A801EAAF22D00DABB06 /* UILabel+Utility.m */; };
 		5C629A841EAB0D1500DABB06 /* UITableView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A831EAB0D1500DABB06 /* UITableView+Helper.m */; };
-		5C629A871EAB39DB00DABB06 /* NotCompletedQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A861EAB39DB00DABB06 /* NotCompletedQuizViewController.m */; };
 		5C629ACA1EAB408100DABB06 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C629AB01EAB408100DABB06 /* Info.plist */; };
 		5C629ACB1EAB408100DABB06 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629AB21EAB408100DABB06 /* MASCompositeConstraint.m */; };
 		5C629ACC1EAB408100DABB06 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629AB51EAB408100DABB06 /* MASConstraint.m */; };
@@ -78,22 +76,18 @@
 		5C26B2EB1EAC2FDF00F71E32 /* RuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeHelper.h; sourceTree = "<group>"; };
 		5C26B2F01EACE34800F71E32 /* WLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLLabel.h; sourceTree = "<group>"; };
 		5C26B2F11EACE34800F71E32 /* WLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLLabel.m; sourceTree = "<group>"; };
-		5C26B2F31EACE74E00F71E32 /* WLTextViewPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLTextViewPanel.h; sourceTree = "<group>"; };
-		5C26B2F41EACE74E00F71E32 /* WLTextViewPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLTextViewPanel.m; sourceTree = "<group>"; };
+		5C26B2F31EACE74E00F71E32 /* WLPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLPanel.h; sourceTree = "<group>"; };
+		5C26B2F41EACE74E00F71E32 /* WLPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLPanel.m; sourceTree = "<group>"; };
 		5C629A701EAAEBB800DABB06 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
 		5C629A711EAAEBB800DABB06 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
 		5C629A721EAAEBB800DABB06 /* ScrollableLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollableLabelView.h; sourceTree = "<group>"; };
 		5C629A731EAAEBB800DABB06 /* ScrollableLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollableLabelView.m; sourceTree = "<group>"; };
 		5C629A741EAAEBB800DABB06 /* SelectableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectableTableView.h; sourceTree = "<group>"; };
 		5C629A751EAAEBB800DABB06 /* SelectableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectableTableView.m; sourceTree = "<group>"; };
-		5C629A7C1EAAEF6800DABB06 /* CompletedQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedQuizViewController.h; sourceTree = "<group>"; };
-		5C629A7D1EAAEF6800DABB06 /* CompletedQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedQuizViewController.m; sourceTree = "<group>"; };
 		5C629A7F1EAAF22D00DABB06 /* UILabel+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Utility.h"; sourceTree = "<group>"; };
 		5C629A801EAAF22D00DABB06 /* UILabel+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Utility.m"; sourceTree = "<group>"; };
 		5C629A821EAB0D1500DABB06 /* UITableView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Helper.h"; sourceTree = "<group>"; };
 		5C629A831EAB0D1500DABB06 /* UITableView+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Helper.m"; sourceTree = "<group>"; };
-		5C629A851EAB39DB00DABB06 /* NotCompletedQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotCompletedQuizViewController.h; sourceTree = "<group>"; };
-		5C629A861EAB39DB00DABB06 /* NotCompletedQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotCompletedQuizViewController.m; sourceTree = "<group>"; };
 		5C629AB01EAB408100DABB06 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C629AB11EAB408100DABB06 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		5C629AB21EAB408100DABB06 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
@@ -205,8 +199,8 @@
 		5C629A6F1EAAEB7000DABB06 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5C26B2F31EACE74E00F71E32 /* WLTextViewPanel.h */,
-				5C26B2F41EACE74E00F71E32 /* WLTextViewPanel.m */,
+				5C26B2F31EACE74E00F71E32 /* WLPanel.h */,
+				5C26B2F41EACE74E00F71E32 /* WLPanel.m */,
 				5C26B2F01EACE34800F71E32 /* WLLabel.h */,
 				5C26B2F11EACE34800F71E32 /* WLLabel.m */,
 				5C629AD51EAB97D700DABB06 /* WLTextView.h */,
@@ -411,10 +405,6 @@
 				5C6505C31E9B6B2F0052E904 /* QuizListViewController.m */,
 				5CF542B71E8FF0690027B911 /* QuizViewController.h */,
 				5CF542B61E8FF0690027B911 /* QuizViewController.m */,
-				5C629A7C1EAAEF6800DABB06 /* CompletedQuizViewController.h */,
-				5C629A7D1EAAEF6800DABB06 /* CompletedQuizViewController.m */,
-				5C629A851EAB39DB00DABB06 /* NotCompletedQuizViewController.h */,
-				5C629A861EAB39DB00DABB06 /* NotCompletedQuizViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -558,11 +548,9 @@
 				5CF542AF1E8FF0380027B911 /* DiffMatchPatch.m in Sources */,
 				5CF542791E8FD4910027B911 /* WLDiffWord+CoreDataClass.m in Sources */,
 				5C629AD71EAB97D700DABB06 /* WLTextView.m in Sources */,
-				5C629A7E1EAAEF6800DABB06 /* CompletedQuizViewController.m in Sources */,
 				5C629A811EAAF22D00DABB06 /* UILabel+Utility.m in Sources */,
 				5C629A841EAB0D1500DABB06 /* UITableView+Helper.m in Sources */,
 				5C629ACF1EAB408100DABB06 /* MASViewAttribute.m in Sources */,
-				5C629A871EAB39DB00DABB06 /* NotCompletedQuizViewController.m in Sources */,
 				5C629ACC1EAB408100DABB06 /* MASConstraint.m in Sources */,
 				5CE5D8CA1E9381E0002A981D /* ArticleTableViewCell.m in Sources */,
 				5C629ADD1EAB9B0000DABB06 /* UIColor+ADKHexPresentation.m in Sources */,
@@ -577,7 +565,7 @@
 				5CF5429E1E8FE8480027B911 /* WLCoreDataManager.m in Sources */,
 				5C629AD21EAB408100DABB06 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				5CF541FD1E8F4E1B0027B911 /* Model.xcdatamodeld in Sources */,
-				5C26B2F51EACE74E00F71E32 /* WLTextViewPanel.m in Sources */,
+				5C26B2F51EACE74E00F71E32 /* WLPanel.m in Sources */,
 				5C26B2EC1EAC2FDF00F71E32 /* RuntimeHelper.h in Sources */,
 				5C629AD01EAB408100DABB06 /* MASViewConstraint.m in Sources */,
 				5CF5427A1E8FD4910027B911 /* WLDiffWord+CoreDataProperties.m in Sources */,

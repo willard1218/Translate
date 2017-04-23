@@ -10,8 +10,13 @@
 @class WLQuiz;
 @class WLTextView;
 @class WLLabel;
-@interface QuizViewController : UIViewController
+@class WLPanel;
+@interface QuizViewController : UIViewController <UITextViewDelegate>
 @property (weak, nonatomic) WLQuiz *quiz;
+@property (nonatomic, strong) WLPanel *questionPanel;
+@property (nonatomic, strong) WLPanel *userAnswerPanel;
+@property (nonatomic, strong) WLPanel *answerPanel;
+
 @property (nonatomic, strong) WLLabel *questionTitleLabel;
 @property (nonatomic, strong) WLTextView *questionTextView;
 @end
