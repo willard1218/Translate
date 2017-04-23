@@ -23,22 +23,16 @@
 
 - (void)setup {
     [super setup];
-    _diffWordsTextView = [[WLTextView alloc] init];
-    _noteView = [[NoteView alloc] init];
+    _userAnswerTextView = [[WLTextView alloc] init];
+    _answerTextView = [[WLTextView alloc] init];
+    _userAnswerTextView.editable = NO;
+    _answerTextView.editable = NO;
+    // _noteView = [[NoteView alloc] init];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
     
     UIBarButtonItem *addNoteButton =
     [[UIBarButtonItem alloc] initWithTitle:@"Add Note"
@@ -52,8 +46,8 @@
     
     
     
-    [self.view addSubview:_diffWordsTextView];
-    
+    [self.view addSubview:_userAnswerTextView];
+    [self.view addSubview:_answerTextView];
     _noteView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:_noteView];
 
@@ -73,8 +67,15 @@
 
 - (void)addDiffWordTextViewConstraint {
     
-    [_diffWordsTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_userAnswerTextView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.questionTextView.mas_bottom).offset(10);
+        make.left.equalTo(self.view.mas_left).offset(10);
+        make.right.equalTo(self.view.mas_right).offset(-10);
+        make.height.equalTo(@100);
+    }];
+    
+    [_answerTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_userAnswerTextView.mas_bottom).offset(10);
         make.left.equalTo(self.view.mas_left).offset(10);
         make.right.equalTo(self.view.mas_right).offset(-10);
         make.height.equalTo(@100);
@@ -83,7 +84,7 @@
 
 - (void)addNoteViewConstraint {
     [_noteView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.diffWordsTextView.mas_bottom).offset(10);
+        make.top.equalTo(self.userAnswerTextView.mas_bottom).offset(10);
         make.left.equalTo(self.view.mas_left).offset(10);
         make.right.and.bottom.equalTo(self.view).offset(-10);
     }];
@@ -96,29 +97,9 @@
 
 - (void)setQuiz:(WLQuiz *)quiz {
     [super setQuiz:quiz];
-    _diffWordsTextView.attributedText = self.quiz.attributedString;
+    _userAnswerTextView.attributedText = self.quiz.attributedUserAnswerString;
+    _answerTextView.attributedText = self.quiz.attributedAnswerString;
 }
 
-
-- (void)keyboardWillShow:(NSNotification *)notification {
-  
-    
-    NSTimeInterval showDuration = [[notification userInfo][UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    
-    [UIView animateWithDuration:showDuration
-                     animations:^{
-                         self.view.frame =
-                         CGRectMake(0, -30, self.view.frame.size.width, self.view.frame.size.height);
-                     }];
-}
-
-- (void)keyboardWillHide:(NSNotification *)notification {
-    NSTimeInterval hideDuration = [[notification userInfo][UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    
-    [UIView animateWithDuration:hideDuration
-                     animations:^{
-                         self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-                     }];
-}
 
 @end

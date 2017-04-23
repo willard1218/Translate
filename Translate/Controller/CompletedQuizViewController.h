@@ -10,6 +10,7 @@
 @class WLTextView;
 @class NoteView;
 @interface CompletedQuizViewController : QuizViewController
-@property (nonatomic, strong) WLTextView *diffWordsTextView;
+@property (nonatomic, strong) WLTextView *userAnswerTextView;
+@property (nonatomic, strong) WLTextView *answerTextView;
 @property (nonatomic, strong) NoteView *noteView;
 @end

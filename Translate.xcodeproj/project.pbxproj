@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5C26B2E71EAC2ECA00F71E32 /* NSObject+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2E61EAC2ECA00F71E32 /* NSObject+Helpers.m */; };
 		5C26B2EC1EAC2FDF00F71E32 /* RuntimeHelper.h in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2EB1EAC2FDF00F71E32 /* RuntimeHelper.h */; };
+		5C26B2F21EACE34800F71E32 /* WLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2F11EACE34800F71E32 /* WLLabel.m */; };
+		5C26B2F51EACE74E00F71E32 /* WLTextViewPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2F41EACE74E00F71E32 /* WLTextViewPanel.m */; };
 		5C629A761EAAEBB800DABB06 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A711EAAEBB800DABB06 /* NoteView.m */; };
 		5C629A771EAAEBB800DABB06 /* ScrollableLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A731EAAEBB800DABB06 /* ScrollableLabelView.m */; };
 		5C629A781EAAEBB800DABB06 /* SelectableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A751EAAEBB800DABB06 /* SelectableTableView.m */; };
@@ -74,6 +76,10 @@
 		5C26B2E51EAC2ECA00F71E32 /* NSObject+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Helpers.h"; sourceTree = "<group>"; };
 		5C26B2E61EAC2ECA00F71E32 /* NSObject+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Helpers.m"; sourceTree = "<group>"; };
 		5C26B2EB1EAC2FDF00F71E32 /* RuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeHelper.h; sourceTree = "<group>"; };
+		5C26B2F01EACE34800F71E32 /* WLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLLabel.h; sourceTree = "<group>"; };
+		5C26B2F11EACE34800F71E32 /* WLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLLabel.m; sourceTree = "<group>"; };
+		5C26B2F31EACE74E00F71E32 /* WLTextViewPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLTextViewPanel.h; sourceTree = "<group>"; };
+		5C26B2F41EACE74E00F71E32 /* WLTextViewPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLTextViewPanel.m; sourceTree = "<group>"; };
 		5C629A701EAAEBB800DABB06 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
 		5C629A711EAAEBB800DABB06 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
 		5C629A721EAAEBB800DABB06 /* ScrollableLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollableLabelView.h; sourceTree = "<group>"; };
@@ -199,6 +205,10 @@
 		5C629A6F1EAAEB7000DABB06 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5C26B2F31EACE74E00F71E32 /* WLTextViewPanel.h */,
+				5C26B2F41EACE74E00F71E32 /* WLTextViewPanel.m */,
+				5C26B2F01EACE34800F71E32 /* WLLabel.h */,
+				5C26B2F11EACE34800F71E32 /* WLLabel.m */,
 				5C629AD51EAB97D700DABB06 /* WLTextView.h */,
 				5C629AD61EAB97D700DABB06 /* WLTextView.m */,
 				5C629A701EAAEBB800DABB06 /* NoteView.h */,
@@ -541,6 +551,7 @@
 				5CE5D8C71E9381D3002A981D /* QuizTableViewCell.m in Sources */,
 				5C629A761EAAEBB800DABB06 /* NoteView.m in Sources */,
 				5C629AD31EAB408100DABB06 /* View+MASAdditions.m in Sources */,
+				5C26B2F21EACE34800F71E32 /* WLLabel.m in Sources */,
 				5C629ACB1EAB408100DABB06 /* MASCompositeConstraint.m in Sources */,
 				5C629A781EAAEBB800DABB06 /* SelectableTableView.m in Sources */,
 				5CF5427C1E8FD4910027B911 /* WLArticle+CoreDataProperties.m in Sources */,
@@ -566,6 +577,7 @@
 				5CF5429E1E8FE8480027B911 /* WLCoreDataManager.m in Sources */,
 				5C629AD21EAB408100DABB06 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				5CF541FD1E8F4E1B0027B911 /* Model.xcdatamodeld in Sources */,
+				5C26B2F51EACE74E00F71E32 /* WLTextViewPanel.m in Sources */,
 				5C26B2EC1EAC2FDF00F71E32 /* RuntimeHelper.h in Sources */,
 				5C629AD01EAB408100DABB06 /* MASViewConstraint.m in Sources */,
 				5CF5427A1E8FD4910027B911 /* WLDiffWord+CoreDataProperties.m in Sources */,
