@@ -23,6 +23,10 @@
 @end
 
 @implementation UILabel (Utility)
+- (CGFloat)textHeight {
+    return [self textHeightForWidth:self.frame.size.width];
+}
+
 - (CGFloat)textHeightForWidth:(CGFloat)width {
     return [[self.text stringByAppendingString:@"\n"] heightForWidth:width font:self.font];
 }

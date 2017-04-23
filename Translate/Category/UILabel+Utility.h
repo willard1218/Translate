@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @interface UILabel (Utility)
+- (CGFloat)textHeight;
 - (CGFloat)textHeightForWidth:(CGFloat)width;
 - (CGFloat)attributedTextHeightForWidth:(CGFloat)width;
 @end
