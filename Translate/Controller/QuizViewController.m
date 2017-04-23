@@ -27,9 +27,7 @@
     self.title = @"Quiz";
     
     
-    _questionScrollableLabel.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:_questionScrollableLabel];
-    
     [self addQuestionScrollableLabelConstraint];
 }
 

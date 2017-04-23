@@ -22,8 +22,8 @@
 - (void)didMoveToSuperview {
     [self addSubview:_segmentedControl];
     [self addSubview:_tableView];
-    [self setupSegmentedControl];
-    [self setupTableView];
+    [self addSegmentedControlConstraints];
+    [self addTableViewConstraints];
 }
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -46,10 +46,7 @@
 }
 
 
-- (void)setupSegmentedControl {
-    
-    
-    
+- (void)addSegmentedControlConstraints {
     [_segmentedControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.and.left.equalTo(self).offset(10);
         make.right.equalTo(self.mas_right).offset(-10);
@@ -57,9 +54,7 @@
     }];
 }
 
-- (void)setupTableView {
-    
-    
+- (void)addTableViewConstraints {
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_segmentedControl.mas_bottom).offset(10);
         make.left.equalTo(self.mas_left).offset(10);

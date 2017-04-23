@@ -14,7 +14,7 @@
 
 - (void)setup {
     [super setup];
-    [self setupView];
+    _label = [[UILabel alloc] init];
 }
 
 
@@ -29,30 +29,43 @@
     _label.attributedText = _attributedText;
 }
 
+
+
 - (void)setupView {
     
-    _label = [[UILabel alloc] init];
+    
     _label.numberOfLines = 0;
     _label.lineBreakMode = NSLineBreakByWordWrapping;
-//    [self layoutIfNeeded];
+    _label.font = [UIFont systemFontOfSize:20];
+    self.backgroundColor = [UIColor ADKColorWithHexString:@"FAE243"];
+    self.layer.borderColor = [UIColor ADKColorWithHexString:@"3B6DD9"].CGColor;
+    self.layer.borderWidth = 3.0;
+    self.layer.cornerRadius = 5.0;
 }
 
 - (void)didMoveToSuperview {
+    [super didMoveToSuperview];
     [self addSubview:_label];
+    [self setupView];
 }
 
-- (void)addLabelConstraint {
+- (void)addLabelConstraints {
+    //self.contentInset = UIEdgeInsetsMake(10, 30, 0, 30);
+    
     [_label mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.and.left.and.width.equalTo(self);
-        CGFloat height = [_label textHeightForWidth:self.frame.size.width];
+        make.centerX.and.top.equalTo(self);
+        //make.top.equalTo(self);
+        make.width.equalTo(self).offset(-30);
+        //make.top.and.left.and.width.equalTo(self);
+        CGFloat height = [_label textHeight];
         make.height.equalTo(@(height));
     }];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [self addLabelConstraint];
-    CGFloat height = [_label textHeightForWidth:_label.frame.size.width];
+    [self addLabelConstraints];
+    CGFloat height = [_label textHeight];
     
     CGSize scrollableSize = CGSizeMake(0, height);
     [self setContentSize:scrollableSize];

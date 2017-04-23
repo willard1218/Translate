@@ -53,7 +53,6 @@
     
     
     
-    _diffWordsScrollableLabelView.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:_diffWordsScrollableLabelView];
     
     _noteView.backgroundColor = [UIColor grayColor];
