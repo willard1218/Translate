@@ -16,13 +16,16 @@
 
 @implementation QuizViewController
 
-
+- (void)setup {
+    [super setup];
+    _questionScrollableLabel = [[ScrollableLabelView alloc] init];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.title = @"Quiz";
-    _questionScrollableLabel = [[ScrollableLabelView alloc] init];
+    
     
     _questionScrollableLabel.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:_questionScrollableLabel];
@@ -42,4 +45,6 @@
     _quiz = quiz;
     _questionScrollableLabel.text = _quiz.question;
 }
+
+
 @end

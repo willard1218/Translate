@@ -11,20 +11,22 @@
 
 @implementation ScrollableLabelView
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self setupView];
-    }
-    return self;
+
+- (void)setup {
+    [super setup];
+    [self setupView];
 }
 
+
 - (void)setText:(NSString *)text {
-    
-    if ([text isKindOfClass:NSString.class]) {
-        _label.text = text;
-    } else
-        _label.attributedText = (NSAttributedString *)text;
+
+    _text = text;
+    _label.text = _text;
+}
+
+- (void)setAttributedText:(NSAttributedString *)attributedText {
+    _attributedText = attributedText;
+    _label.attributedText = _attributedText;
 }
 
 - (void)setupView {
@@ -32,8 +34,11 @@
     _label = [[UILabel alloc] init];
     _label.numberOfLines = 0;
     _label.lineBreakMode = NSLineBreakByWordWrapping;
+//    [self layoutIfNeeded];
+}
+
+- (void)didMoveToSuperview {
     [self addSubview:_label];
-    [self layoutIfNeeded];
 }
 
 - (void)addLabelConstraint {

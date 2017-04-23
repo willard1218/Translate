@@ -11,24 +11,12 @@
 
 @implementation NoteView
 
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        
-    }
-    
-    return self;
-}
-
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self setupView];
+    
 }
 
-- (void)didMoveToSuperview {
-    [super didMoveToSuperview];
-}
 
 - (void)addScrollViewConstraints {
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {

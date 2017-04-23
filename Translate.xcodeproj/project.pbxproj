@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C26B2E71EAC2ECA00F71E32 /* NSObject+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2E61EAC2ECA00F71E32 /* NSObject+Helpers.m */; };
+		5C26B2EC1EAC2FDF00F71E32 /* RuntimeHelper.h in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2EB1EAC2FDF00F71E32 /* RuntimeHelper.h */; };
 		5C629A761EAAEBB800DABB06 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A711EAAEBB800DABB06 /* NoteView.m */; };
 		5C629A771EAAEBB800DABB06 /* ScrollableLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A731EAAEBB800DABB06 /* ScrollableLabelView.m */; };
 		5C629A781EAAEBB800DABB06 /* SelectableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A751EAAEBB800DABB06 /* SelectableTableView.m */; };
@@ -69,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C26B2E51EAC2ECA00F71E32 /* NSObject+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Helpers.h"; sourceTree = "<group>"; };
+		5C26B2E61EAC2ECA00F71E32 /* NSObject+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Helpers.m"; sourceTree = "<group>"; };
+		5C26B2EB1EAC2FDF00F71E32 /* RuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeHelper.h; sourceTree = "<group>"; };
 		5C629A701EAAEBB800DABB06 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
 		5C629A711EAAEBB800DABB06 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
 		5C629A721EAAEBB800DABB06 /* ScrollableLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollableLabelView.h; sourceTree = "<group>"; };
@@ -331,6 +336,9 @@
 		5CF542931E8FE3EB0027B911 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5C26B2EB1EAC2FDF00F71E32 /* RuntimeHelper.h */,
+				5C26B2E51EAC2ECA00F71E32 /* NSObject+Helpers.h */,
+				5C26B2E61EAC2ECA00F71E32 /* NSObject+Helpers.m */,
 				5C629A821EAB0D1500DABB06 /* UITableView+Helper.h */,
 				5C629A831EAB0D1500DABB06 /* UITableView+Helper.m */,
 				5CE5D8F11E9673B7002A981D /* NSString+Helplers.h */,
@@ -547,6 +555,7 @@
 				5C629ACC1EAB408100DABB06 /* MASConstraint.m in Sources */,
 				5CE5D8CA1E9381E0002A981D /* ArticleTableViewCell.m in Sources */,
 				5C629ADD1EAB9B0000DABB06 /* UIColor+ADKHexPresentation.m in Sources */,
+				5C26B2E71EAC2ECA00F71E32 /* NSObject+Helpers.m in Sources */,
 				5CF542B81E8FF0690027B911 /* QuizViewController.m in Sources */,
 				5C6505C11E9B6B1F0052E904 /* ArticleListViewController.m in Sources */,
 				5C629ACD1EAB408100DABB06 /* MASConstraintMaker.m in Sources */,
@@ -557,6 +566,7 @@
 				5CF5429E1E8FE8480027B911 /* WLCoreDataManager.m in Sources */,
 				5C629AD21EAB408100DABB06 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				5CF541FD1E8F4E1B0027B911 /* Model.xcdatamodeld in Sources */,
+				5C26B2EC1EAC2FDF00F71E32 /* RuntimeHelper.h in Sources */,
 				5C629AD01EAB408100DABB06 /* MASViewConstraint.m in Sources */,
 				5CF5427A1E8FD4910027B911 /* WLDiffWord+CoreDataProperties.m in Sources */,
 				5CF542B01E8FF0380027B911 /* DiffMatchPatchCFUtilities.c in Sources */,

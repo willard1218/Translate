@@ -10,12 +10,9 @@
 
 @implementation WLTextView
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self setupView];
-    }
-    return self;
+
+-(void)willMoveToSuperview:(UIView *)newSuperview {
+    [self setupView];
 }
 
 - (void)setupView {
@@ -24,5 +21,11 @@
     self.layer.borderColor = [UIColor ADKColorWithHexString:@"3B6DD9"].CGColor;
     self.layer.borderWidth = 3.0;
     self.layer.cornerRadius = 5.0;
+    
+    CGFloat textPadding = 7;
+    self.textContainerInset = UIEdgeInsetsMake(textPadding,
+                                               textPadding,
+                                               textPadding,
+                                               textPadding);
 }
 @end

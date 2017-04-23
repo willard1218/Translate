@@ -16,9 +16,21 @@
 
 @implementation CompletedQuizViewController
 
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+   
+}
+
+- (void)setup {
+    [super setup];
+    _diffWordsScrollableLabelView = [[ScrollableLabelView alloc] init];
+    _noteView = [[NoteView alloc] init];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
@@ -39,18 +51,14 @@
     self.navigationItem.rightBarButtonItem = addNoteButton;
     
     
-    _diffWordsScrollableLabelView = [[ScrollableLabelView alloc] init];
     
     
     _diffWordsScrollableLabelView.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:_diffWordsScrollableLabelView];
     
-    _noteView = [[NoteView alloc] init];
     _noteView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:_noteView];
 
-    
-    
     
     
     [self addDiffWordScrollableLabelConstraint];
@@ -89,8 +97,9 @@
 
 - (void)setQuiz:(WLQuiz *)quiz {
     [super setQuiz:quiz];
-    _diffWordsScrollableLabelView.text = self.quiz.attributedString;
+    _diffWordsScrollableLabelView.attributedText = self.quiz.attributedString;
 }
+
 
 - (void)keyboardWillShow:(NSNotification *)notification {
   

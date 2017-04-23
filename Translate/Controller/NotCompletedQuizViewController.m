@@ -32,9 +32,8 @@
 - (void)save {
     [self.quiz submitWithUserAnswer:_answerTextView.text];
     CompletedQuizViewController *viewController = [[CompletedQuizViewController alloc] init];
-    viewController.view.backgroundColor = [UIColor whiteColor];
+    //viewController.view.backgroundColor = [UIColor whiteColor];
     viewController.quiz = self.quiz;
-    
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

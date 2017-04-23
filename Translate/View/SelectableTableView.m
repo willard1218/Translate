@@ -10,17 +10,21 @@
 
 @implementation SelectableTableView
 
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.backgroundColor = [UIColor whiteColor];
-        [self setupSegmentedControl];
-        [self setupTableView];
-    }
-    return self;
+- (void)setup {
+    [super setup];
+    self.backgroundColor = [UIColor whiteColor];
+    _tableView = [[UITableView alloc] init];
+    NSArray *itemArray = @[@"One", @"Two", @"Three"];
+    _segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
+   
 }
 
+- (void)didMoveToSuperview {
+    [self addSubview:_segmentedControl];
+    [self addSubview:_tableView];
+    [self setupSegmentedControl];
+    [self setupTableView];
+}
 - (void)layoutSubviews {
     [super layoutSubviews];
 }
@@ -43,9 +47,8 @@
 
 
 - (void)setupSegmentedControl {
-    NSArray *itemArray = @[@"One", @"Two", @"Three"];
-    _segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
-    [self addSubview:_segmentedControl];
+    
+    
     
     [_segmentedControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.and.left.equalTo(self).offset(10);
@@ -55,8 +58,7 @@
 }
 
 - (void)setupTableView {
-    _tableView = [[UITableView alloc] init];
-    [self addSubview:_tableView];
+    
     
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_segmentedControl.mas_bottom).offset(10);
