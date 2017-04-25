@@ -35,39 +35,31 @@
     _userAnswerPanel = [[WLPanel alloc] init];
     
     _panels = @[_questionPanel, _userAnswerPanel, _answerPanel];
+    NSArray *titleTextsWhenBlur = @[@"題目",
+                                    @"答案",
+                                    @"正確答案"];
     
-    _questionPanel.delegate = self;
-    _answerPanel.delegate = self;
-    _userAnswerPanel.delegate = self;
+    NSArray *titleTextsWhenFocus = @[@"請圈選翻錯的原句",
+                                     @"請圈選你對這句的翻譯",
+                                     @"請圈選這句正確的翻譯"];
     
+    NSArray *buttonTextsWhenFocus = @[@"下一步",
+                                      @"下一步",
+                                      @"完成"];
     
+    [_panels enumerateObjectsUsingBlock:^(WLPanel * _Nonnull panel, NSUInteger idx, BOOL * _Nonnull stop) {
+        panel.titleTextWhenBlur = titleTextsWhenBlur[idx];
+        panel.titleTextWhenFocus = titleTextsWhenFocus[idx];
+        panel.buttonTextWhenFocus = buttonTextsWhenFocus[idx];
+        panel.delegate = self;
+        panel.state = WLPanelStateBlur;
+        [self.view addSubview:panel];
+    }];
     
-    _questionPanel.textView.delegate = self;
-    _userAnswerPanel.textView.delegate = self;
-    _answerPanel.textView.delegate = self;
-    
-    _questionPanel.titleTextWhenBlur = @"題目";
-    _userAnswerPanel.titleTextWhenBlur = @"答案";
-    _answerPanel.titleTextWhenBlur = @"正確答案";
-    
-    _questionPanel.titleTextWhenFocus = @"請圈選翻錯的原句";
-    _userAnswerPanel.titleTextWhenFocus = @"請圈選你對這句的翻譯";
-    _answerPanel.titleTextWhenFocus = @"請圈選這句正確的翻譯";
-    
-    _questionPanel.buttonTextWhenFocus = @"下一步";
-    _userAnswerPanel.buttonTextWhenFocus = @"下一步";
-    _answerPanel.buttonTextWhenFocus = @"完成";
-    
-    _questionPanel.state = WLPanelStateBlur;
-    _userAnswerPanel.state = WLPanelStateBlur;
-    _answerPanel.state = WLPanelStateBlur;
     
     _questionPanel.textView.editable = NO;
     _answerPanel.textView.editable = NO;
 
-    [self.view addSubview:_questionPanel];
-    [self.view addSubview:_userAnswerPanel];
-    [self.view addSubview:_answerPanel];
     [self addViewConstraints];
     
     _userAnswerPanel.textView.text = @"非常謝謝您，克里斯。可以有這個機會再度踏上這個演講台真是一大榮幸。我非常感激。這個研討會給我留下了極為深刻的印象，我想感謝大家對我之前演講的好評。";
