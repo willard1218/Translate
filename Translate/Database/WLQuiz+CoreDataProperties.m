@@ -104,9 +104,9 @@
         idx += wordLength;
     }
     
-    UIFont *text1Font = [UIFont systemFontOfSize:20];
+    UIFont *font = [UIFont textViewFont];
     
-    [attrString addAttributes:@{NSFontAttributeName:text1Font} range:NSMakeRange(0, idx)];
+    [attrString addAttributes:@{NSFontAttributeName:font} range:NSMakeRange(0, idx)];
 
     return attrString;
 }

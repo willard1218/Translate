@@ -36,6 +36,7 @@
 		5C7D85361E7D54D40013F82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C7D85351E7D54D40013F82A /* Assets.xcassets */; };
 		5C7D85391E7D54D40013F82A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7D85371E7D54D40013F82A /* LaunchScreen.storyboard */; };
 		5CA3AA531E7D5BAA0049ACF8 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA3AA521E7D5BAA0049ACF8 /* libxml2.tbd */; };
+		5CA42F291EAF92E5008D6DFD /* UIFont+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA42F281EAF92E5008D6DFD /* UIFont+Helpers.m */; };
 		5CE5D8AF1E928257002A981D /* 1.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CE5D8AE1E928257002A981D /* 1.json */; };
 		5CE5D8C71E9381D3002A981D /* QuizTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE5D8C61E9381D3002A981D /* QuizTableViewCell.m */; };
 		5CE5D8CA1E9381E0002A981D /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE5D8C91E9381DF002A981D /* ArticleTableViewCell.m */; };
@@ -130,6 +131,8 @@
 		5C7D85381E7D54D40013F82A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C7D853A1E7D54D40013F82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CA3AA521E7D5BAA0049ACF8 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		5CA42F271EAF92E5008D6DFD /* UIFont+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Helpers.h"; sourceTree = "<group>"; };
+		5CA42F281EAF92E5008D6DFD /* UIFont+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Helpers.m"; sourceTree = "<group>"; };
 		5CE5D8AE1E928257002A981D /* 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1.json; sourceTree = "<group>"; };
 		5CE5D8C51E9381D3002A981D /* QuizTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizTableViewCell.h; sourceTree = "<group>"; };
 		5CE5D8C61E9381D3002A981D /* QuizTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizTableViewCell.m; sourceTree = "<group>"; };
@@ -340,6 +343,8 @@
 		5CF542931E8FE3EB0027B911 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5CA42F271EAF92E5008D6DFD /* UIFont+Helpers.h */,
+				5CA42F281EAF92E5008D6DFD /* UIFont+Helpers.m */,
 				5C26B2EB1EAC2FDF00F71E32 /* RuntimeHelper.h */,
 				5C26B2E51EAC2ECA00F71E32 /* NSObject+Helpers.h */,
 				5C26B2E61EAC2ECA00F71E32 /* NSObject+Helpers.m */,
@@ -557,6 +562,7 @@
 				5C26B2E71EAC2ECA00F71E32 /* NSObject+Helpers.m in Sources */,
 				5CF542B81E8FF0690027B911 /* QuizViewController.m in Sources */,
 				5C6505C11E9B6B1F0052E904 /* ArticleListViewController.m in Sources */,
+				5CA42F291EAF92E5008D6DFD /* UIFont+Helpers.m in Sources */,
 				5C629ACD1EAB408100DABB06 /* MASConstraintMaker.m in Sources */,
 				5CF542771E8FD4910027B911 /* WLQuiz+CoreDataClass.m in Sources */,
 				5CF542B21E8FF0380027B911 /* NSString+JavaSubstring.m in Sources */,

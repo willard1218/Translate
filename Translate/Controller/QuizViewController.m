@@ -11,9 +11,9 @@
 #import "WLQuiz+CoreDataClass.h"
 #import "WLTextView.h"
 #import "WLLabel.h"
-#import "WLPanel.h"
-@interface QuizViewController ()
 
+@interface QuizViewController ()
+@property (nonatomic) BOOL hasSubmited;
 @end
 
 @implementation QuizViewController
@@ -21,9 +21,8 @@
 - (void)setup {
     [super setup];
     
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Comfirm" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Comfirm" style:UIBarButtonItemStylePlain target:self action:@selector(saveButtonPressed)];
     self.navigationItem.rightBarButtonItem = barButtonItem;
-    
     
 }
 
@@ -35,16 +34,35 @@
     _answerPanel = [[WLPanel alloc] init];
     _userAnswerPanel = [[WLPanel alloc] init];
     
+    _questionPanel.delegate = self;
+    _answerPanel.delegate = self;
+    _userAnswerPanel.delegate = self;
+    
+    
     
     _questionPanel.textView.delegate = self;
     _userAnswerPanel.textView.delegate = self;
     _answerPanel.textView.delegate = self;
     
-    _questionPanel.titleLabel.text = @"題目";
-    _userAnswerPanel.titleLabel.text = @"答案";
-    _answerPanel.titleLabel.text = @"正確答案";
+    _questionPanel.titleTextWhenBlur = @"題目";
+    _userAnswerPanel.titleTextWhenBlur = @"答案";
+    _answerPanel.titleTextWhenBlur = @"正確答案";
+    
+    _questionPanel.titleTextWhenFocus = @"請圈選翻錯的原句";
+    _userAnswerPanel.titleTextWhenFocus = @"請圈選你對這句的翻譯";
+    _answerPanel.titleTextWhenFocus = @"請圈選這句正確的翻譯";
+    
+    _questionPanel.buttonTextWhenFocus = @"下一步";
+    _userAnswerPanel.buttonTextWhenFocus = @"下一步";
+    _answerPanel.buttonTextWhenFocus = @"完成";
+    
+    _questionPanel.state = WLPanelStateBlur;
+    _userAnswerPanel.state = WLPanelStateBlur;
+    _answerPanel.state = WLPanelStateBlur;
+    
     _questionPanel.textView.editable = NO;
     _answerPanel.textView.editable = NO;
+
     [self.view addSubview:_questionPanel];
     [self.view addSubview:_userAnswerPanel];
     [self.view addSubview:_answerPanel];
@@ -56,25 +74,26 @@
 
 - (void)addViewConstraints {
     NSNumber *height = @120;
-    CGFloat space = 5;
+    CGFloat space = 10;
+    CGFloat widthOffset = -30;
     
     [_questionPanel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(space);
-        make.width.equalTo(self.view).offset(-10);
+        make.width.equalTo(self.view).offset(widthOffset);
         make.centerX.equalTo(self.view);
         make.height.equalTo(height);
     }];
  
     [_userAnswerPanel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_questionPanel.mas_bottom).offset(space);
-        make.width.equalTo(self.view).offset(-10);
+        make.width.equalTo(self.view).offset(widthOffset);
         make.centerX.equalTo(self.view);
         make.height.equalTo(height);
     }];
     
     [_answerPanel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_userAnswerPanel.mas_bottom).offset(space);
-        make.width.equalTo(self.view).offset(-10);
+        make.width.equalTo(self.view).offset(widthOffset);
         make.centerX.equalTo(self.view);
         make.height.equalTo(height);
     }];
@@ -85,30 +104,79 @@
     _questionPanel.textView.text = quiz.question;
 }
 
-- (void)save {
-    [_quiz submitWithUserAnswer:_userAnswerPanel.textView.text];
-    _userAnswerPanel.textView.text = nil;
-    _userAnswerPanel.textView.attributedText = _quiz.attributedUserAnswerString;
+- (void)saveButtonPressed {
+    self.hasSubmited = YES;
+}
+
+- (void)addNoteButtonPressed {
+    _questionPanel.state = WLPanelStateFocus;
+}
+
+- (void)selectTextWithRange:(NSRange)range inTextView:(UITextView *)textView {
+    textView.selectedRange = range;
+    [textView select:self];
+    [textView setContentOffset:CGPointZero animated:YES];
+}
+
+- (void)setHasSubmited:(BOOL)hasSubmited {
+    _hasSubmited = hasSubmited;
     
-    _userAnswerPanel.textView.editable = NO;
-    
-    
-    
-    _answerPanel.textView.attributedText = _quiz.attributedAnswerString;
-    _answerPanel.hidden = NO;
+    if (hasSubmited) {
+        [_quiz submitWithUserAnswer:_userAnswerPanel.textView.text];
+        _userAnswerPanel.textView.text = nil;
+        _userAnswerPanel.textView.attributedText = _quiz.attributedUserAnswerString;
+        
+        _userAnswerPanel.textView.editable = NO;
+        _answerPanel.textView.attributedText = _quiz.attributedAnswerString;
+        _answerPanel.hidden = NO;
+        
+        UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Note" style:UIBarButtonItemStylePlain target:self action:@selector(addNoteButtonPressed)];
+        self.navigationItem.rightBarButtonItem = barButtonItem;
+        
+    }
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    if (!_hasSubmited) {
+        return [super canPerformAction:action withSender:sender];
+    }
+    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [[UIMenuController sharedMenuController] setMenuVisible:NO animated:NO];
     }];
     return [super canPerformAction:action withSender:sender];
 }
-- (void)textViewDidChangeSelection:(UITextView *)textView {
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [event.allTouches anyObject];
     
-    UITextRange *selectedRange = [textView selectedTextRange];
-    NSString *selectedText = [textView textInRange:selectedRange];
-    NSLog(@"%@", selectedText);
+    if ([_userAnswerPanel.textView isFirstResponder] &&
+        touch.view != _userAnswerPanel.textView) {
+        [_userAnswerPanel.textView resignFirstResponder];
+    }
     
+    [super touchesBegan:touches withEvent:event];
 }
+
+- (void)panel:(WLPanel *)panel didSelectButton:(UIButton *)button {
+    
+    if (panel == _questionPanel) {
+        _questionPanel.state = WLPanelStateFocusout;
+        _userAnswerPanel.state = WLPanelStateFocus;
+        return;
+    }
+    
+    if (panel == _userAnswerPanel) {
+        _userAnswerPanel.state = WLPanelStateFocusout;
+        _answerPanel.state = WLPanelStateFocus;
+        return;
+    }
+    
+    if (panel == _answerPanel) {
+        _answerPanel.state = WLPanelStateFocusout;
+        return;
+    }
+}
+
 @end

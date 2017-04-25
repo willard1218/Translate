@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "WLPanel.h"
+
 @class WLQuiz;
 @class WLTextView;
 @class WLLabel;
-@class WLPanel;
-@interface QuizViewController : UIViewController <UITextViewDelegate>
+
+@interface QuizViewController : UIViewController <UITextViewDelegate, WLPanelDelegate>
 @property (weak, nonatomic) WLQuiz *quiz;
 @property (nonatomic, strong) WLPanel *questionPanel;
 @property (nonatomic, strong) WLPanel *userAnswerPanel;

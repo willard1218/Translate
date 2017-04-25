@@ -21,6 +21,7 @@
 #import "UITableView+Helper.h"
 #import "UIColor+ADKHexPresentation.h"
 #import "NSObject+Helpers.h"
+#import "UIFont+Helpers.h"
 
 #import "Masonry.h"
 
