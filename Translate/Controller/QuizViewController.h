@@ -16,6 +16,7 @@
 
 @interface QuizViewController : UIViewController <UITextViewDelegate, WLPanelDelegate>
 @property (weak, nonatomic) WLQuiz *quiz;
+@property (nonatomic, strong) NSArray<WLPanel *> *panels;
 @property (nonatomic, strong) WLPanel *questionPanel;
 @property (nonatomic, strong) WLPanel *userAnswerPanel;
 @property (nonatomic, strong) WLPanel *answerPanel;

@@ -34,6 +34,8 @@
     _answerPanel = [[WLPanel alloc] init];
     _userAnswerPanel = [[WLPanel alloc] init];
     
+    _panels = @[_questionPanel, _userAnswerPanel, _answerPanel];
+    
     _questionPanel.delegate = self;
     _answerPanel.delegate = self;
     _userAnswerPanel.delegate = self;
@@ -160,22 +162,16 @@
 }
 
 - (void)panel:(WLPanel *)panel didSelectButton:(UIButton *)button {
-    
-    if (panel == _questionPanel) {
-        _questionPanel.state = WLPanelStateFocusout;
-        _userAnswerPanel.state = WLPanelStateFocus;
-        return;
-    }
-    
-    if (panel == _userAnswerPanel) {
-        _userAnswerPanel.state = WLPanelStateFocusout;
-        _answerPanel.state = WLPanelStateFocus;
-        return;
-    }
-    
-    if (panel == _answerPanel) {
-        _answerPanel.state = WLPanelStateFocusout;
-        return;
+    for (NSUInteger i = 0; i < _panels.count; i++) {
+        if (panel == _panels[i]) {
+            panel.state = WLPanelStateFocusout;
+            
+            if (i + 1 < _panels.count) {
+                _panels[i + 1].state = WLPanelStateFocus;
+            }
+            
+            break;
+        }
     }
 }
 
