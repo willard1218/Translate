@@ -8,6 +8,11 @@
 
 #import "WLPanel.h"
 #import "WLTextView.h"
+@interface WLPanel()
+@property (nonatomic, strong) UIView *titleView;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIButton *button;
+@end
 
 @implementation WLPanel
 
@@ -22,7 +27,7 @@
     
     [_button addTarget:self action:@selector(confrimButtonPressed:) forControlEvents:UIControlEventTouchDown];
     _button.hidden = YES;
-    _button.titleLabel.font = [UIFont systemFontOfSize:20];
+    _button.titleLabel.font = [UIFont systemFontOfSize:18];
     
     _titleLabel.font = [UIFont systemFontOfSize:18];
     _titleLabel.textColor = [UIColor blueColor];
@@ -57,9 +62,10 @@
     }];
     
     [_button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_textView.mas_bottom).offset(2);
+        make.top.equalTo(_textView.mas_bottom).offset(5);
         make.right.width.equalTo(self);
-        make.height.equalTo(@30);
+        make.bottom.equalTo(self);
+        //make.height.equalTo(@30);
     }];
 }
 
@@ -77,23 +83,36 @@
             break;
         case WLPanelStateFocus:
             [_button setTitle:_buttonTextWhenFocus forState:UIControlStateNormal];
+            
             _titleLabel.text = _titleTextWhenFocus;
             _button.hidden = NO;
-            [self selectTextWithTextView:_textView];
+            [self selectText];
             break;
         case WLPanelStateFocusout:
         {
             UITextRange *selectedRange = [_textView selectedTextRange];
-            NSString *selectedText = [_textView textInRange:selectedRange];
-            NSLog(@"%@", selectedText);
+            _selectedText = [_textView textInRange:selectedRange];
+            
             _titleLabel.text = _titleTextWhenBlur;
             _button.hidden = YES;
+            [self deselectText];
             break;
         }
     }
     
 }
 
+- (void)deselectText {
+    [self deselectTextWithTextView:_textView];
+}
+
+- (void)deselectTextWithTextView:(UITextView *)textView {
+    textView.selectedTextRange = nil;
+}
+
+- (void)selectText {
+    [self selectTextWithTextView:_textView];
+}
 
 - (void)selectTextWithTextView:(UITextView *)textView {
     NSRange range = NSMakeRange(0, 10);
@@ -101,8 +120,8 @@
 }
 
 - (void)selectTextWithRange:(NSRange)range inTextView:(UITextView *)textView {
-    textView.selectedRange = range;
     [textView select:self];
+    textView.selectedRange = range;
     [textView setContentOffset:CGPointZero animated:YES];
 }
 @end

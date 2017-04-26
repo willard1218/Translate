@@ -158,7 +158,15 @@
         if (panel == _panels[i]) {
             panel.state = WLPanelStateFocusout;
             
-            if (i + 1 < _panels.count) {
+            BOOL lastPanel = i + 1 == _panels.count;
+            if (lastPanel) {
+                
+                WLQuiz *quiz = [WLQuiz createEntityWithQuestion:_questionPanel.selectedText
+                                                         answer:_answerPanel.selectedText
+                                                     userAnswer:_userAnswerPanel.selectedText];
+                [_quiz addNotesObject:quiz];
+            }
+            else {
                 _panels[i + 1].state = WLPanelStateFocus;
             }
             

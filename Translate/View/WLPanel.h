@@ -22,10 +22,8 @@ typedef NS_ENUM(NSInteger, WLPanelState) {
 
 @interface WLPanel : UIView
 @property (nonatomic, weak) id <WLPanelDelegate> delegate;
-@property (nonatomic, strong) UIView *titleView;
-@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong, readonly) NSString *selectedText;
 @property (nonatomic, strong) WLTextView *textView;
-@property (nonatomic, strong) UIButton *button;
 
 @property (nonatomic, copy) NSString *titleTextWhenBlur;
 @property (nonatomic, copy) NSString *titleTextWhenFocus;
