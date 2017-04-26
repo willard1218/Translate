@@ -11,4 +11,19 @@
 
 @implementation WLArticle
 
+- (void)setupWithDictionary:(NSDictionary *)dict {
+    self.title = dict[@"title"];
+    self.url = dict[@"url"];
+    self.identifier = [dict[@"id"] integerValue];
+    
+}
+
+- (void)setupQuizsWithDictionary:(NSDictionary *)dict {
+    self.quizs = [NSOrderedSet orderedSet];
+    for (NSDictionary *quizDict in dict[@"paragraphs"]) {
+        WLQuiz *quiz = [WLQuiz createEntityWithDict:quizDict];
+        [quiz save];
+        [self addQuizsObject:quiz];
+    }
+}
 @end

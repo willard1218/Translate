@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int16_t identifier;
 @property (nullable, nonatomic, retain) NSOrderedSet<WLQuiz *> *quizs;
 
-- (void)setupQuizsWithDictionary:(NSDictionary *)dict;
+
 @end
 
 @interface WLArticle (CoreDataGeneratedAccessors)

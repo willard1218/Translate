@@ -14,7 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WLArticle : NSManagedObject
-
+- (void)setupQuizsWithDictionary:(NSDictionary *)dict;
 @end
 
 NS_ASSUME_NONNULL_END

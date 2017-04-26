@@ -14,7 +14,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WLQuiz : NSManagedObject
-
+- (void)submitWithUserAnswer:(NSString *)userAnswer;
+- (NSAttributedString *)attributedString;
+- (NSAttributedString *)attributedAnswerString;
+- (NSAttributedString *)attributedUserAnswerString;
++ (WLQuiz *)createEntityWithQuestion:(NSString *)question
+                              answer:(NSString *)answer
+                          userAnswer:(NSString *)userAnswer;
 @end
 
 NS_ASSUME_NONNULL_END

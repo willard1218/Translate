@@ -17,10 +17,12 @@
         <attribute name="userAnswer" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="article" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WLArticle" inverseName="quizs" inverseEntity="WLArticle" syncable="YES"/>
         <relationship name="diffWords" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="WLDiffWord" inverseName="quiz" inverseEntity="WLDiffWord" syncable="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="WLQuiz" inverseName="parentQuiz" inverseEntity="WLQuiz" syncable="YES"/>
+        <relationship name="parentQuiz" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WLQuiz" inverseName="notes" inverseEntity="WLQuiz" syncable="YES"/>
     </entity>
     <elements>
         <element name="WLArticle" positionX="5877" positionY="2214" width="128" height="105"/>
         <element name="WLDiffWord" positionX="5868" positionY="2034" width="128" height="90"/>
-        <element name="WLQuiz" positionX="5542" positionY="2034" width="128" height="118"/>
+        <element name="WLQuiz" positionX="6136" positionY="2111" width="128" height="150"/>
     </elements>
 </model>
