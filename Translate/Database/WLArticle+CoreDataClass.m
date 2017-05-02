@@ -22,8 +22,8 @@
     self.quizs = [NSOrderedSet orderedSet];
     for (NSDictionary *quizDict in dict[@"paragraphs"]) {
         WLQuiz *quiz = [WLQuiz createEntityWithDict:quizDict];
-        [quiz save];
         [self addQuizsObject:quiz];
+        [self save];
     }
 }
 @end

@@ -9,11 +9,19 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+typedef NS_ENUM(NSInteger, TaskState) {
+    TaskStatePending,
+    TaskStateExecuting,
+    TaskStateCompleted
+};
+
 @class WLArticle, WLDiffWord;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WLQuiz : NSManagedObject
+@property (nonatomic) TaskState taskState;
+
 - (void)submitWithUserAnswer:(NSString *)userAnswer;
 - (NSAttributedString *)attributedString;
 - (NSAttributedString *)attributedAnswerString;

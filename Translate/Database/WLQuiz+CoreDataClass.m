@@ -13,6 +13,14 @@
 
 @implementation WLQuiz
 
+- (void)setTaskState:(TaskState)taskState {
+    self.taskStateRaw = (int16_t) taskState;
+}
+
+- (TaskState)taskState {
+    return (TaskState) self.taskStateRaw;
+}
+
 + (WLQuiz *)createEntityWithQuestion:(NSString *)question
                               answer:(NSString *)answer
                           userAnswer:(NSString *)userAnswer {
@@ -20,6 +28,7 @@
     quiz.question = question;
     quiz.answer = answer;
     quiz.userAnswer = userAnswer;
+    quiz.taskState = TaskStatePending;
     return quiz;
 }
 

@@ -14,22 +14,22 @@
 
 @interface QuizViewController ()
 @property (nonatomic) BOOL hasSubmited;
+@property (nonatomic) TaskState state;
 @end
 
 @implementation QuizViewController
 
-- (void)setup {
-    [super setup];
-    
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Comfirm" style:UIBarButtonItemStylePlain target:self action:@selector(saveButtonPressed)];
-    self.navigationItem.rightBarButtonItem = barButtonItem;
-    
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.title = @"Quiz";
+    [self setupViews];
+    [self addViewConstraints];
+   
+}
+
+- (void)setupViews {
     _questionPanel = [[WLPanel alloc] init];
     _answerPanel = [[WLPanel alloc] init];
     _userAnswerPanel = [[WLPanel alloc] init];
@@ -56,14 +56,18 @@
         [self.view addSubview:panel];
     }];
     
-    
-    _questionPanel.textView.editable = NO;
-    _answerPanel.textView.editable = NO;
+    _noteListButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:_noteListButton];
+    [self setNoteListButtonUI];
+}
 
-    [self addViewConstraints];
-    
-    _userAnswerPanel.textView.text = @"非常謝謝您，克里斯。可以有這個機會再度踏上這個演講台真是一大榮幸。我非常感激。這個研討會給我留下了極為深刻的印象，我想感謝大家對我之前演講的好評。";
-    _answerPanel.hidden = YES;
+- (void)setNoteListButtonUI {
+    [_noteListButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    _noteListButton.layer.masksToBounds = YES;
+    _noteListButton.layer.cornerRadius = 10;
+    _noteListButton.layer.borderWidth = 1.0;
+    _noteListButton.layer.borderColor = [UIColor blueColor].CGColor;
+    _noteListButton.backgroundColor = [UIColor greenColor];
 }
 
 - (void)addViewConstraints {
@@ -91,44 +95,101 @@
         make.centerX.equalTo(self.view);
         make.height.equalTo(height);
     }];
+    
+    [_noteListButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view).offset(-10);
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(@200);
+        make.height.equalTo(@30);
+    }];
 }
 
-- (void)setQuiz:(WLQuiz *)quiz {
-    _quiz = quiz;
-    _questionPanel.textView.text = quiz.question;
+#pragma mark Actions
+- (void)setRightButtonWithTitle:(NSString *)title action:(SEL)action {
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:action];
+    self.navigationItem.rightBarButtonItem = barButtonItem;
 }
 
 - (void)saveButtonPressed {
+    [_quiz save];
     self.hasSubmited = YES;
+    _quiz.taskState = TaskStateCompleted;
 }
 
 - (void)addNoteButtonPressed {
     _questionPanel.state = WLPanelStateFocus;
 }
 
-- (void)selectTextWithRange:(NSRange)range inTextView:(UITextView *)textView {
-    textView.selectedRange = range;
-    [textView select:self];
-    [textView setContentOffset:CGPointZero animated:YES];
+#pragma mark Setters
+
+- (void)setQuiz:(WLQuiz *)quiz {
+    _quiz = quiz;
+    _questionPanel.textView.text = _quiz.question;
+    _questionPanel.textView.editable = NO;
+    _answerPanel.textView.editable = NO;
+    self.state = _quiz.taskState;
+}
+
+
+- (void)setState:(TaskState)state {
+    switch (state) {
+        case TaskStatePending:
+        {
+            _noteListButton.hidden = YES;
+            _answerPanel.hidden = YES;
+            [self setRightButtonWithTitle:@"Confirm" action:@selector(saveButtonPressed)];
+            break;
+        }
+        case TaskStateExecuting:
+        {
+            _noteListButton.hidden = YES;
+            _answerPanel.hidden = YES;
+            [self setRightButtonWithTitle:@"Confirm" action:@selector(saveButtonPressed)];
+            _userAnswerPanel.textView.text = _quiz.userAnswer;
+            _answerPanel.hidden = YES;
+            break;
+        }
+        case TaskStateCompleted:
+        {
+            _answerPanel.hidden = NO;
+            _noteListButton.hidden = YES;
+            
+            [self setRightButtonWithTitle:@"Add Note" action:@selector(addNoteButtonPressed)];
+       
+          
+            
+            
+            [self setNoteListButtonUI];
+            
+            _userAnswerPanel.textView.attributedText = _quiz.attributedUserAnswerString;
+            
+            _userAnswerPanel.textView.editable = NO;
+            _answerPanel.textView.attributedText = _quiz.attributedAnswerString;
+            
+            NSUInteger numOfNotes = _quiz.notes.count;
+            if (numOfNotes == 0) {
+                break;
+            }
+            
+            _noteListButton.hidden = NO;
+            
+            NSString *title = [NSString stringWithFormat:@"查看 %ld 則筆記", numOfNotes];
+            [_noteListButton setTitle:title forState:UIControlStateNormal];
+            break;
+        }
+    }
 }
 
 - (void)setHasSubmited:(BOOL)hasSubmited {
     _hasSubmited = hasSubmited;
-    
+      
     if (hasSubmited) {
         [_quiz submitWithUserAnswer:_userAnswerPanel.textView.text];
-        _userAnswerPanel.textView.text = nil;
-        _userAnswerPanel.textView.attributedText = _quiz.attributedUserAnswerString;
-        
-        _userAnswerPanel.textView.editable = NO;
-        _answerPanel.textView.attributedText = _quiz.attributedAnswerString;
-        _answerPanel.hidden = NO;
-        
-        UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Note" style:UIBarButtonItemStylePlain target:self action:@selector(addNoteButtonPressed)];
-        self.navigationItem.rightBarButtonItem = barButtonItem;
-        
+        self.state = TaskStateCompleted;
     }
 }
+
+#pragma mark Touch events
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
     if (!_hasSubmited) {
@@ -153,18 +214,20 @@
     [super touchesBegan:touches withEvent:event];
 }
 
+#pragma mark Delegates
 - (void)panel:(WLPanel *)panel didSelectButton:(UIButton *)button {
     for (NSUInteger i = 0; i < _panels.count; i++) {
         if (panel == _panels[i]) {
             panel.state = WLPanelStateFocusout;
             
-            BOOL lastPanel = i + 1 == _panels.count;
+            BOOL lastPanel = (i + 1 == _panels.count);
             if (lastPanel) {
                 
                 WLQuiz *quiz = [WLQuiz createEntityWithQuestion:_questionPanel.selectedText
                                                          answer:_answerPanel.selectedText
                                                      userAnswer:_userAnswerPanel.selectedText];
                 [_quiz addNotesObject:quiz];
+                [quiz save];
             }
             else {
                 _panels[i + 1].state = WLPanelStateFocus;

@@ -2,7 +2,7 @@
 //  WLQuiz+CoreDataProperties.h
 //  Translate
 //
-//  Created by willard on 2017/4/26.
+//  Created by willard on 2017/5/2.
 //  Copyright © 2017年 willard. All rights reserved.
 //
 
@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *answer;
 @property (nullable, nonatomic, copy) NSString *question;
 @property (nullable, nonatomic, copy) NSString *userAnswer;
+@property (nonatomic) int16_t taskStateRaw;
 @property (nullable, nonatomic, retain) WLArticle *article;
 @property (nullable, nonatomic, retain) NSOrderedSet<WLDiffWord *> *diffWords;
 @property (nullable, nonatomic, retain) NSOrderedSet<WLQuiz *> *notes;

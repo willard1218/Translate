@@ -14,6 +14,7 @@
     <entity name="WLQuiz" representedClassName="WLQuiz" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="question" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskStateRaw" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="userAnswer" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="article" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WLArticle" inverseName="quizs" inverseEntity="WLArticle" syncable="YES"/>
         <relationship name="diffWords" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="WLDiffWord" inverseName="quiz" inverseEntity="WLDiffWord" syncable="YES"/>
@@ -23,6 +24,6 @@
     <elements>
         <element name="WLArticle" positionX="5877" positionY="2214" width="128" height="105"/>
         <element name="WLDiffWord" positionX="5868" positionY="2034" width="128" height="90"/>
-        <element name="WLQuiz" positionX="6136" positionY="2111" width="128" height="150"/>
+        <element name="WLQuiz" positionX="6136" positionY="2111" width="128" height="165"/>
     </elements>
 </model>

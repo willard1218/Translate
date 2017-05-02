@@ -14,7 +14,7 @@
 @class WLTextView;
 @class WLLabel;
 
-@interface QuizViewController : UIViewController <UITextViewDelegate, WLPanelDelegate>
+@interface QuizViewController : UIViewController <UITextViewDelegate, WLPanelDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) WLQuiz *quiz;
 @property (nonatomic, strong) NSArray<WLPanel *> *panels;
 @property (nonatomic, strong) WLPanel *questionPanel;
@@ -23,5 +23,6 @@
 
 @property (nonatomic, strong) WLLabel *questionTitleLabel;
 @property (nonatomic, strong) WLTextView *questionTextView;
+@property (nonatomic, strong) UIButton *noteListButton;
 @end
 
