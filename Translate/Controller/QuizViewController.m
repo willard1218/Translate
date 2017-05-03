@@ -111,9 +111,10 @@
 }
 
 - (void)saveButtonPressed {
-    [_quiz save];
-    self.hasSubmited = YES;
     _quiz.taskState = TaskStateCompleted;
+    _quiz.userAnswer = _userAnswerPanel.textView.text;
+    self.hasSubmited = YES;
+    [_quiz save];
 }
 
 - (void)addNoteButtonPressed {
