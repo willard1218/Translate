@@ -11,6 +11,7 @@
 		5C26B2EC1EAC2FDF00F71E32 /* RuntimeHelper.h in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2EB1EAC2FDF00F71E32 /* RuntimeHelper.h */; };
 		5C26B2F21EACE34800F71E32 /* WLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2F11EACE34800F71E32 /* WLLabel.m */; };
 		5C26B2F51EACE74E00F71E32 /* WLPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C26B2F41EACE74E00F71E32 /* WLPanel.m */; };
+		5C4F8AEE1EBAA5AA00BB8AAB /* NSString+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F8AED1EBAA5AA00BB8AAB /* NSString+Helpers.m */; };
 		5C629A761EAAEBB800DABB06 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A711EAAEBB800DABB06 /* NoteView.m */; };
 		5C629A771EAAEBB800DABB06 /* ScrollableLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A731EAAEBB800DABB06 /* ScrollableLabelView.m */; };
 		5C629A781EAAEBB800DABB06 /* SelectableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C629A751EAAEBB800DABB06 /* SelectableTableView.m */; };
@@ -79,6 +80,8 @@
 		5C26B2F11EACE34800F71E32 /* WLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLLabel.m; sourceTree = "<group>"; };
 		5C26B2F31EACE74E00F71E32 /* WLPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLPanel.h; sourceTree = "<group>"; };
 		5C26B2F41EACE74E00F71E32 /* WLPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLPanel.m; sourceTree = "<group>"; };
+		5C4F8AEC1EBAA5AA00BB8AAB /* NSString+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Helpers.h"; sourceTree = "<group>"; };
+		5C4F8AED1EBAA5AA00BB8AAB /* NSString+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Helpers.m"; sourceTree = "<group>"; };
 		5C629A701EAAEBB800DABB06 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
 		5C629A711EAAEBB800DABB06 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
 		5C629A721EAAEBB800DABB06 /* ScrollableLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollableLabelView.h; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 		5CF542931E8FE3EB0027B911 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5C4F8AEC1EBAA5AA00BB8AAB /* NSString+Helpers.h */,
+				5C4F8AED1EBAA5AA00BB8AAB /* NSString+Helpers.m */,
 				5CA42F271EAF92E5008D6DFD /* UIFont+Helpers.h */,
 				5CA42F281EAF92E5008D6DFD /* UIFont+Helpers.m */,
 				5C26B2EB1EAC2FDF00F71E32 /* RuntimeHelper.h */,
@@ -548,6 +553,7 @@
 				5C629AD31EAB408100DABB06 /* View+MASAdditions.m in Sources */,
 				5C26B2F21EACE34800F71E32 /* WLLabel.m in Sources */,
 				5C629ACB1EAB408100DABB06 /* MASCompositeConstraint.m in Sources */,
+				5C4F8AEE1EBAA5AA00BB8AAB /* NSString+Helpers.m in Sources */,
 				5C629A781EAAEBB800DABB06 /* SelectableTableView.m in Sources */,
 				5CF5427C1E8FD4910027B911 /* WLArticle+CoreDataProperties.m in Sources */,
 				5CF542AF1E8FF0380027B911 /* DiffMatchPatch.m in Sources */,
