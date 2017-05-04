@@ -15,14 +15,16 @@
 
 @interface QuizListViewController ()
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) SelectableTableView *selectableTableView;
-
+@property (nonatomic, strong) NSArray <WLQuiz *> *quizs;
 @end
 
 @implementation QuizListViewController
 
 - (void)fetchArticle {
     if (_article.quizs && _article.quizs.count > 0) {
+        _quizs = _article.quizs.array;
         [self.tableView reloadData];
         return;
     }
@@ -57,6 +59,7 @@
         }
         
         [_article setupQuizsWithDictionary:articleDict];
+        _quizs = _article.quizs.array;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
@@ -73,6 +76,9 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerClass:QuizTableViewCell.class];
+    
+    _segmentedControl = _selectableTableView.segmentedControl;
+    [_segmentedControl addTarget:self action:@selector(tabDidChange) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewDidLoad {
@@ -83,24 +89,23 @@
     [self fetchArticle];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _article.quizs.count;
+    return _quizs.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     QuizTableViewCell *cell = [tableView dequeueReusableCellWithClass:QuizTableViewCell.class forIndexPath:indexPath];
     
-    WLQuiz *quiz = _article.quizs[indexPath.row];
-    cell.textLabel.text = quiz.question;
-    NSUInteger wordCount = [quiz.question componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].count;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%li", wordCount];
+    WLQuiz *quiz = _quizs[indexPath.row];
+    [cell setupDataWithQuiz:quiz];
+//    cell.textLabel.text = quiz.question;
+    
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%li", wordCount];
     
     return cell;
 }
@@ -109,10 +114,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     QuizViewController *viewController = [[QuizViewController alloc] init];
     viewController.view.backgroundColor = [UIColor whiteColor];
-    viewController.quiz = _article.quizs[indexPath.row];
+    viewController.quiz = _quizs[indexPath.row];
 
     [self.navigationController pushViewController:viewController animated:YES];
 
 }
 
+- (void)tabDidChange {
+    TaskState taskState = _segmentedControl.selectedSegmentIndex;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.taskStateRaw == %d", taskState];
+    NSArray *results = [_article.quizs.array filteredArrayUsingPredicate:predicate];
+    
+    _quizs = results;
+    [_tableView reloadData];
+}
 @end

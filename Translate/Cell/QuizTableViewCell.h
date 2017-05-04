@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class WLQuiz;
 
 @interface QuizTableViewCell : UITableViewCell
-
+- (void)setupDataWithQuiz:(WLQuiz *)quiz;
 @end

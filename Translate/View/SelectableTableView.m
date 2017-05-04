@@ -14,7 +14,7 @@
     [super setup];
     self.backgroundColor = [UIColor whiteColor];
     _tableView = [[UITableView alloc] init];
-    NSArray *itemArray = @[@"One", @"Two", @"Three"];
+    NSArray *itemArray = @[@"Pending", @"Executing", @"Completed"];
     _segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
    
 }
