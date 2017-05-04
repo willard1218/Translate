@@ -15,9 +15,12 @@
 
 @interface ArticleListViewController ()
 
-@property NSMutableArray <WLArticle *> *articles;
+@property (nonatomic, strong) NSMutableArray <WLArticle *> *displayArticles;
+@property (nonatomic, strong) NSMutableArray <WLArticle *> *articles;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) SelectableTableView *selectableTableView;
+
 @end
 
 @implementation ArticleListViewController
@@ -67,6 +70,7 @@
                 [_articles addObject:article];
             }
             
+            _displayArticles = _articles;
             [self.tableView reloadData];
         });
         
@@ -84,12 +88,15 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerClass:ArticleTableViewCell.class];
+    _segmentedControl = _selectableTableView.segmentedControl;
+    [_segmentedControl addTarget:self action:@selector(tabDidChange) forControlEvents:UIControlEventValueChanged];
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Article List";
+    _displayArticles = [NSMutableArray array];
     _articles = [NSMutableArray array];
     [self initArticles];
 }
@@ -99,14 +106,15 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _articles.count;
+    return _displayArticles.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ArticleTableViewCell *cell = [tableView dequeueReusableCellWithClass:ArticleTableViewCell.class forIndexPath:indexPath];
     
-    cell.textLabel.text = _articles[indexPath.row].title;
+    [cell setupDataWithArticle:_displayArticles[indexPath.row]];
+    //cell.textLabel.text = _displayArticles[indexPath.row].title;
     
     return cell;
 }
@@ -116,13 +124,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     QuizListViewController *viewController = [[QuizListViewController alloc] init];
-    viewController.article = _articles[indexPath.row];
+    viewController.article = _displayArticles[indexPath.row];
     viewController.view.backgroundColor = [UIColor whiteColor];
  
     [self.navigationController pushViewController:viewController animated:YES];
 
 }
 
+- (void)tabDidChange {
+    TaskState taskState = _segmentedControl.selectedSegmentIndex;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.taskState == %d", taskState];
+    NSArray *results = [_articles filteredArrayUsingPredicate:predicate];
+    
+    _displayArticles = results.copy;
+    [_tableView reloadData];
+}
 
 
 @end

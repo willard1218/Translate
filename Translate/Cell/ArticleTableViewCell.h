@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class WLArticle;
 @interface ArticleTableViewCell : UITableViewCell
-
+- (void)setupDataWithArticle:(WLArticle *)article;
 @end

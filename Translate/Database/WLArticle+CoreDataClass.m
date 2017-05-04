@@ -26,4 +26,41 @@
         [self save];
     }
 }
+
+- (NSArray <NSNumber *> *)quizStateCounts {
+    NSMutableArray <NSNumber *> *results = [NSMutableArray arrayWithCapacity:TaskStateCount];
+    
+    for (int i = 0; i < TaskStateCount; i++) {
+        results[i] = @0;
+    }
+    
+    for (WLQuiz *quiz in self.quizs) {
+        results[quiz.taskStateRaw] = @([results[quiz.taskStateRaw] integerValue] + 1);
+    }
+    
+    return results.copy;
+}
+
+- (TaskState)taskState {
+    if (self.quizs.count == 0) {
+        return TaskStatePending;
+    }
+    
+    NSArray <NSNumber *> *quizStateCounts = self.quizStateCounts;
+    
+    if ([quizStateCounts[TaskStateExecuting] intValue] > 0) {
+        return TaskStateExecuting;
+    }
+    
+    // count of TaskStateExecuting == 0
+    if ([quizStateCounts[TaskStatePending] intValue] == 0) {
+        return TaskStateCompleted;
+    }
+    
+    if ([quizStateCounts[TaskStateCompleted] intValue] == 0) {
+        return TaskStatePending;
+    }
+    
+    return TaskStateExecuting;
+}
 @end

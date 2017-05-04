@@ -12,7 +12,8 @@
 typedef NS_ENUM(NSInteger, TaskState) {
     TaskStatePending,
     TaskStateExecuting,
-    TaskStateCompleted
+    TaskStateCompleted,
+    TaskStateCount,
 };
 
 @class WLArticle, WLDiffWord;

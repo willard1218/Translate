@@ -26,7 +26,7 @@
 
 - (void)setupViews {
     _detailLabel = [[UILabel alloc] init];
-    
+    _detailLabel.textAlignment = NSTextAlignmentRight;
     [self addSubview:_detailLabel];
     
     [_detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
