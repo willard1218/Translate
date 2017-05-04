@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (Helpers)
-
+@property (nonatomic, strong) NSString *localize;
 @end

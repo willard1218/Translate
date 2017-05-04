@@ -9,5 +9,7 @@
 #import "NSString+Helpers.h"
 
 @implementation NSString (Helpers)
-
+- (NSString *)localize {
+    return NSLocalizedString(self, nil);
+}
 @end
