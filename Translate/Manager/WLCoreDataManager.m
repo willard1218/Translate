@@ -58,7 +58,7 @@
         
     }
     
-    _managedObjectContext = _persistentContainer.viewContext;
+    _managedObjectContext = _persistentContainer.newBackgroundContext;
 }
 
 - (__kindof NSManagedObject *)createEntityWithClass:(Class)cls {
